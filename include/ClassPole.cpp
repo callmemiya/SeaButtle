@@ -62,9 +62,8 @@ void Pole::print(){
         std::cout << " | ";
         for (int j = 0; j < 10; j++){
             if (pole[i][j] == 0) std::cout <<" ";
-            else {
+            else
                 std::cout << pole[i][j];
-            }
             std::cout <<" | ";
         }
         std::cout <<std::endl;

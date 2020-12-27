@@ -13,7 +13,7 @@ public:
     int shots[10][10];
     int AdrKor[5][10];
     Pole();
-    Pole(std::vector<std::vector<int>> m);
+    explicit Pole(std::vector<std::vector<int>> m);
     void clear();
     void print();
 };
