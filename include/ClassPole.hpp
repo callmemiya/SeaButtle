@@ -1,5 +1,6 @@
-#ifndef ClassPole_hpp
-#define ClassPole_hpp
+// Copyright 2018 Your Name <your_email>
+#ifndef INCLUDE_CLASSPOLE_HPP_
+#define INCLUDE_CLASSPOLE_HPP_
 
 #include <iostream>
 #include <iomanip>
@@ -17,4 +18,4 @@ public:
     void print();
 };
 
-#endif /* ClassPole_hpp */
+#endif // INCLUDE_CLASSPOLE_HPP_

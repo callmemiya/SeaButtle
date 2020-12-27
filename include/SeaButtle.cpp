@@ -1,3 +1,4 @@
+// Copyright 2018 Your Name <your_email>
 #include "SeaButtle.h"
 
 int poiskAdresa(int row, int col, int pal, int polog, int user){
@@ -56,19 +57,21 @@ void pointKor(int row, int col, int pal, int polog, int user){
     if (polog == 1){
         for (int i = 0; i < pal; i++){
             if (user == 1) PoleIgroka.pole[row + i][col] = 1;
-            else PoleComp.pole[row + i][col] = 1;
+            else
+                PoleComp.pole[row + i][col] = 1;
         }
     } else{
         for (int i = 0; i < pal; i++){
             if (user == 1) PoleIgroka.pole[row][col + i] = 1;
-            else PoleComp.pole[row][col + i] = 1;
+            else
+                PoleComp.pole[row][col + i] = 1;
         }
     }
 }
 
 int read(char y){
     int y1 = -1;
-    switch(y){
+    switch (y){
         case 'A':
             y1 = 1;
             break;
@@ -137,18 +140,24 @@ int read(char y){
 void pointKorablVruchnuy(){
     int x, y, polog;
     do {
-        std::cout <<"Введите корректно координаты начала четырехпалубного корабля: X и Y" <<std::endl;
+        std::cout <<"Введите корректно координаты начала
+        четырехпалубного корабля: X и Y" <<std::endl;
         do{
             char y1;
             std::cin >>y1 >>x;
             y = read(y1);
-            if (x < 1 || y < 1 || x > 10 || y > 10) std::cout <<"Координаты введены некорректно, проверьте правильность написания." <<std::endl;
+            if (x < 1 || y < 1 || x > 10 || y > 10)
+                std::cout <<"Координаты введены некорректно,
+                проверьте правильность написания." <<std::endl;
         }while(x < 1 || y < 1 || x > 10 || y > 10);
-        std::cout <<"Выберите расположение:" <<std::endl <<" Вертикальное - 1"
-            <<std::endl <<" Горизонтальное - 2" <<std::endl;
+        std::cout <<"Выберите расположение:" <<std::endl
+        <<" Вертикальное - 1" <<std::endl <<" Горизонтальное - 2"
+        <<std::endl;
         do{
-            std::cin >>polog;
-            if (polog != 1 || polog != 2) std::cout <<"Расположение корабля может быть только вертикальное(1) или горизонтальное(2)." <<std::endl;
+            std::cin >> polog;
+            if (polog != 1 || polog != 2) std::cout
+                <<"Расположение корабля может быть только
+                вертикальное(1) или горизонтальное(2)." <<std::endl;
         }while (polog != 1 && polog != 2);
     }while(!poiskAdresa(x - 1, y - 1, 4, polog, 1));
     PoleIgroka.AdrKor[0][0] = x - 1;
@@ -159,18 +168,25 @@ void pointKorablVruchnuy(){
     PoleIgroka.print();
     for (int i = 0; i < 2; i++){
         do{
-            std::cout <<"Введите корректно координаты начала трёхпалубного корабля: X и Y" <<std::endl;
+            std::cout << "Введите корректно координаты
+            начала трёхпалубного корабля: X и Y" << std::endl;
             do{
                 char y1;
-                std::cin >>y1 >>x;
+                std::cin >> y1 >> x;
                 y = read(y1);
-                if (x < 1 || y < 1 || x > 10 || y > 10) std::cout <<"Координаты введены некорректно, проверьте правильность написания." <<std::endl;
+                if (x < 1 || y < 1 || x > 10 || y > 10)
+                    std::cout <<"Координаты введены некорректно,
+                    проверьте правильность написания." <<std::endl;
             }while(x < 1 || y < 1 || x > 10 || y > 10);
-            std::cout <<"Выберите расположение:" <<std::endl <<" Вертикальное - 1"
-                <<std::endl <<" Горизонтальное - 2" <<std::endl;
+            std::cout <<"Выберите расположение:" <<std::endl
+            <<" Вертикальное - 1" <<std::endl <<" Горизонтальное - 2"
+            <<std::endl;
             do{
-                std::cin >>polog;
-                if (polog != 1 || polog != 2) std::cout <<"Расположение корабля может быть только вертикальное(1) или горизонтальное(2)." <<std::endl;
+                std::cin >> polog;
+                if (polog != 1 || polog != 2)
+                    std::cout <<"Расположение корабля может быть
+                    только вертикальное(1) или горизонтальное(2)."
+                    <<std::endl;
             }while (polog != 1 && polog != 2);
         }while(!poiskAdresa(x - 1, y - 1, 3, polog, 1));
         PoleIgroka.AdrKor[0][1 + i] = x - 1;
@@ -182,18 +198,25 @@ void pointKorablVruchnuy(){
     }
     for (int i = 0; i < 3; i++){
         do{
-            std::cout <<"Введите корректно координаты начала двухпалубного корабля: X и Y" <<std::endl;
+            std::cout << "Введите корректно координаты
+            начала двухпалубного корабля: X и Y" << std::endl;
             do{
                 char y1;
-                std::cin >>y1 >>x;
+                std::cin >> y1 >> x;
                 y = read(y1);
-                if (x < 1 || y < 1 || x > 10 || y > 10) std::cout <<"Координаты введены некорректно, проверьте правильность написания." <<std::endl;
+                if (x < 1 || y < 1 || x > 10 || y > 10)
+                    std::cout <<"Координаты введены некорректно,
+                    проверьте правильность написания." <<std::endl;
             }while(x < 1 || y < 1 || x > 10 || y > 10);
-            std::cout <<"Выберите расположение:" <<std::endl <<" Вертикальное - 1"
-                <<std::endl <<" Горизонтальное - 2" <<std::endl;
+            std::cout << "Выберите расположение:" << std::endl
+            <<" Вертикальное - 1" << std::endl <<" Горизонтальное - 2"
+            << std::endl;
             do{
-                std::cin >>polog;
-                if (polog != 1 || polog != 2) std::cout <<"Расположение корабля может быть только вертикальное(1) или горизонтальное(2)." <<std::endl;
+                std::cin >> polog;
+                if (polog != 1 || polog != 2)
+                    std::cout << "Расположение корабля может быть
+                    только вертикальное(1) или горизонтальное(2)."
+                    <<std::endl;
             }while (polog != 1 && polog != 2);
         }while(!poiskAdresa(x - 1, y - 1, 2, polog, 1));
         PoleIgroka.AdrKor[0][2 + i] = x - 1;
@@ -205,12 +228,15 @@ void pointKorablVruchnuy(){
     }
     for (int i = 0; i < 4; i++){
         do{
-            std::cout <<"Введите корректно координаты начала однопалубного корабля: X и Y" <<std::endl;
+            std::cout << "Введите корректно координаты
+            начала однопалубного корабля: X и Y" <<std::endl;
             do{
                 char y1;
-                std::cin >>y1 >>x;
+                std::cin >> y1 >> x;
                 y = read(y1);
-                if (x < 1 || y < 1 || x > 10 || y > 10) std::cout <<"Координаты введены некорректно, проверьте правильность написания." <<std::endl;
+                if (x < 1 || y < 1 || x > 10 || y > 10)
+                    std::cout <<"Координаты введены некорректно,
+                    проверьте правильность написания." <<std::endl;
             }while(x < 1 || y < 1 || x > 10 || y > 10);
         }while(!poiskAdresa(x - 1, y - 1, 1, 1, 1));
         PoleIgroka.AdrKor[0][6 + i] = x - 1;
@@ -223,23 +249,15 @@ void pointKorablVruchnuy(){
 }
 
 void pointHardPC(){
-    int m[3][10] = {{1,1,1,1,0,1,1,0,1,1},
-                    {1,1,0,1,1,1,1,0,1,1},
-                    {1,1,0,1,1,0,1,1,1,1}};
-    int f[3][10] = {{1,1,1,0,1,1,1,0,1,1},
-                    {1,1,1,0,1,1,0,1,1,1},
-                    {1,1,0,1,1,1,0,1,1,1}};
-    int n[4][10] = {{1,1,1,1,0,1,1,1,0,1},
-                    {0,0,0,0,0,0,0,0,0,1},
-                    {1,0,1,1,1,0,1,1,0,1},
-                    {1,0,0,0,0,0,0,0,0,1}
-    };
-    int rnd = rand()%3;
+    int m[3][10] = {{1,1,1,1,0,1,1,0,1,1}, {1,1,0,1,1,1,1,0,1,1}, {1,1,0,1,1,0,1,1,1,1}};
+    int f[3][10] = {{1,1,1,0,1,1,1,0,1,1}, {1,1,1,0,1,1,0,1,1,1}, {1,1,0,1,1,1,0,1,1,1}};
+    int n[4][10] = {{1,1,1,1,0,1,1,1,0,1}, {0,0,0,0,0,0,0,0,0,1}, {1,0,1,1,1,0,1,1,0,1}, {1,0,0,0,0,0,0,0,0,1}};
+    int rnd = rand() % 3;
     if (rnd == 0){
-        int rndm = rand()%4;
+        int rndm = rand() % 4;
         if (rndm == 0){
-            int l = rand()%3;
-            int j = rand()%3;
+            int l = rand() % 3;
+            int j = rand() % 3;
             if (l == 0){
                 PoleComp.AdrKor[0][0] = 0;
                 PoleComp.AdrKor[1][0] = 0;
@@ -325,8 +343,8 @@ void pointHardPC(){
                 PoleComp.pole[9][i] = f[j][i];
             }
         } else if (rndm == 1){
-            int j = rand()%3;
-            int l = rand()%3;
+            int j = rand() % 3;
+            int l = rand() % 3;
             if (l == 0){
                 PoleComp.AdrKor[0][0] = 9;
                 PoleComp.AdrKor[1][0] = 0;
@@ -412,8 +430,8 @@ void pointHardPC(){
                 PoleComp.pole[0][i] = f[j][i];
             }
         } else if (rndm == 2){
-            int l = rand()%3;
-            int j = rand()%3;
+            int l = rand() % 3;
+            int j = rand() % 3;
             if (l == 0){
                 PoleComp.AdrKor[0][0] = 0;
                 PoleComp.AdrKor[1][0] = 0;
@@ -499,8 +517,8 @@ void pointHardPC(){
                 PoleComp.pole[i][9] = f[j][i];
             }
         } else {
-            int j = rand()%3;
-            int l = rand()%3;
+            int j = rand() % 3;
+            int l = rand() % 3;
             if (l == 0){
                 PoleComp.AdrKor[0][0] = 0;
                 PoleComp.AdrKor[1][0] = 9;
@@ -587,10 +605,10 @@ void pointHardPC(){
             }
         }
     } else if (rnd == 1){
-        int rndm = rand()%4;
+        int rndm = rand() % 4;
         if (rndm == 0){
-            int l = rand()%3;
-            int j = rand()%3;
+            int l = rand() % 3;
+            int j = rand() % 3;
             if (l == 0){
                 PoleComp.AdrKor[0][0] = 0;
                 PoleComp.AdrKor[1][0] = 0;
@@ -676,8 +694,8 @@ void pointHardPC(){
                 PoleComp.pole[i][2] = f[j][i];
             }
         } else if (rndm == 1){
-            int l = rand()%3;
-            int j = rand()%3;
+            int l = rand() % 3;
+            int j = rand() % 3;
             if (l == 0){
                 PoleComp.AdrKor[0][0] = 0;
                 PoleComp.AdrKor[1][0] = 9;
@@ -763,8 +781,8 @@ void pointHardPC(){
                 PoleComp.pole[i][7] = f[j][i];
             }
         } else if (rndm == 2){
-            int l = rand()%3;
-            int j = rand()%3;
+            int l = rand() % 3;
+            int j = rand() % 3;
             if (l == 0){
                 PoleComp.AdrKor[0][0] = 0;
                 PoleComp.AdrKor[1][0] = 0;
@@ -850,8 +868,8 @@ void pointHardPC(){
                 PoleComp.pole[2][i] = f[j][i];
             }
         } else {
-            int l = rand()%3;
-            int j = rand()%3;
+            int l = rand() % 3;
+            int j = rand() % 3;
             if (l == 0){
                 PoleComp.AdrKor[0][0] = 9;
                 PoleComp.AdrKor[1][0] = 0;
@@ -938,7 +956,7 @@ void pointHardPC(){
             }
         }
     } else {
-        int rndm = rand()%4;
+        int rndm = rand() % 4;
         if (rndm == 0){
             PoleComp.AdrKor[0][0] = 0;
             PoleComp.AdrKor[1][0] = 0;
@@ -1082,7 +1100,7 @@ void pointHardPC(){
 }
 
 void pointKorablPC(int pal, int colum){
-    if(pal == 0)
+    if (pal == 0)
             return;
         for(int j = 1; j <= colum; j++)
         {
@@ -1105,37 +1123,35 @@ void pointKorablPC(int pal, int colum){
                     row = rand() % 10;
                 }while (!poiskAdresa(row, col, pal, polog, 2));
             }
-     
-            switch(polog)
-            {
+            switch (polog){
             case 1:
                 pointKor(row, col, pal, polog, 2);
-                if(pal == 4){
+                if (pal == 4){
                     PoleComp.AdrKor[0][0] = row;
                     PoleComp.AdrKor[1][0] = col;
                     PoleComp.AdrKor[2][0] = 1;
                     PoleComp.AdrKor[3][0] = pal;
-                }else if(pal == 3 && j == 1){
+                }else if (pal == 3 && j == 1){
                     PoleComp.AdrKor[0][1] = row;
                     PoleComp.AdrKor[1][1] = col;
                     PoleComp.AdrKor[2][1] = 1;
                     PoleComp.AdrKor[3][1] = pal;
-                }else if(pal == 3 && j == 2){
+                }else if (pal == 3 && j == 2){
                     PoleComp.AdrKor[0][2] = row;
                     PoleComp.AdrKor[1][2] = col;
                     PoleComp.AdrKor[2][2] = 1;
                     PoleComp.AdrKor[3][2] = pal;
-                }else if(pal == 2 && j == 1){
+                }else if (pal == 2 && j == 1){
                     PoleComp.AdrKor[0][3] = row;
                     PoleComp.AdrKor[1][3] = col;
                     PoleComp.AdrKor[2][3] = 1;
                     PoleComp.AdrKor[3][3] = pal;
-                }else if(pal == 2 && j == 2){
+                }else if (pal == 2 && j == 2){
                     PoleComp.AdrKor[0][4] = row;
                     PoleComp.AdrKor[1][4] = col;
                     PoleComp.AdrKor[2][4] = 1;
                     PoleComp.AdrKor[3][4] = pal;
-                }else if(pal == 2 && j == 3){
+                }else if (pal == 2 && j == 3){
                     PoleComp.AdrKor[0][5] = row;
                     PoleComp.AdrKor[1][5] = col;
                     PoleComp.AdrKor[2][5] = 1;
@@ -1166,32 +1182,32 @@ void pointKorablPC(int pal, int colum){
                 break;
             case 2:
                 pointKor(row, col, pal, polog, 2);
-                if(pal == 4){
+                if (pal == 4){
                     PoleComp.AdrKor[0][0] = row;
                     PoleComp.AdrKor[1][0] = col;
                     PoleComp.AdrKor[2][0] = 2;
                     PoleComp.AdrKor[3][0] = pal;
-                }else if(pal == 3 && j == 1){
+                }else if (pal == 3 && j == 1){
                     PoleComp.AdrKor[0][1] = row;
                     PoleComp.AdrKor[1][1] = col;
                     PoleComp.AdrKor[2][1] = 2;
                     PoleComp.AdrKor[3][1] = pal;
-                }else if(pal == 3 && j == 2){
+                }else if (pal == 3 && j == 2){
                     PoleComp.AdrKor[0][2] = row;
                     PoleComp.AdrKor[1][2] = col;
                     PoleComp.AdrKor[2][2] = 2;
                     PoleComp.AdrKor[3][2] = pal;
-                }else if(pal == 2 && j == 1){
+                }else if (pal == 2 && j == 1){
                     PoleComp.AdrKor[0][3] = row;
                     PoleComp.AdrKor[1][3] = col;
                     PoleComp.AdrKor[2][3] = 2;
                     PoleComp.AdrKor[3][3] = pal;
-                }else if(pal == 2 && j == 2){
+                }else if (pal == 2 && j == 2){
                     PoleComp.AdrKor[0][4] = row;
                     PoleComp.AdrKor[1][4] = col;
                     PoleComp.AdrKor[2][4] = 2;
                     PoleComp.AdrKor[3][4] = pal;
-                }else if(pal == 2 && j == 3){
+                }else if (pal == 2 && j == 3){
                     PoleComp.AdrKor[0][5] = row;
                     PoleComp.AdrKor[1][5] = col;
                     PoleComp.AdrKor[2][5] = 2;
@@ -1226,11 +1242,10 @@ void pointKorablPC(int pal, int colum){
 }
 
 void pointKorabl(int pal, int colum){
-    if(pal == 0)
+    if (pal == 0)
         return;
-    for(int j = 1; j <= colum; j++)
-    {
-        int row,col;
+    for (int j = 1; j <= colum; j++){
+        int row, col;
         int polog = 1 + rand() % 2;
         if (polog == 1){
             do{
@@ -1239,8 +1254,7 @@ void pointKorabl(int pal, int colum){
                 }while (row + pal > 10);
                 col = rand() % 10;
             }while (!poiskAdresa(row, col, pal, polog, 1));
-        }
-        else {
+        } else {
             do{
                 do{
                     col = rand() % 10;
@@ -1249,43 +1263,40 @@ void pointKorabl(int pal, int colum){
             }while (!poiskAdresa(row, col, pal, polog, 1));
         }
  
-        switch(polog)
-        {
+        switch (polog){
         case 1:
             pointKor(row, col, pal, polog, 1);
-            if(pal == 4){
+            if (pal == 4){
                 PoleIgroka.AdrKor[0][0] = row;
                 PoleIgroka.AdrKor[1][0] = col;
                 PoleIgroka.AdrKor[2][0] = 1;
                 PoleIgroka.AdrKor[3][0] = pal;
-            }else if(pal == 3 && j == 1){
+            }else if (pal == 3 && j == 1){
                 PoleIgroka.AdrKor[0][1] = row;
                 PoleIgroka.AdrKor[1][1] = col;
                 PoleIgroka.AdrKor[2][1] = 1;
                 PoleIgroka.AdrKor[3][1] = pal;
-            }else if(pal == 3 && j == 2){
+            }else if (pal == 3 && j == 2){
                 PoleIgroka.AdrKor[0][2] = row;
                 PoleIgroka.AdrKor[1][2] = col;
                 PoleIgroka.AdrKor[2][2] = 1;
                 PoleIgroka.AdrKor[3][2] = pal;
-            }else if(pal == 2 && j == 1){
+            }else if (pal == 2 && j == 1){
                 PoleIgroka.AdrKor[0][3] = row;
                 PoleIgroka.AdrKor[1][3] = col;
                 PoleIgroka.AdrKor[2][3] = 1;
                 PoleIgroka.AdrKor[3][3] = pal;
-            }else if(pal == 2 && j == 2){
+            }else if (pal == 2 && j == 2){
                 PoleIgroka.AdrKor[0][4] = row;
                 PoleIgroka.AdrKor[1][4] = col;
                 PoleIgroka.AdrKor[2][4] = 1;
                 PoleIgroka.AdrKor[3][4] = pal;
-            }
-            else if(pal == 2 && j == 3){
+            }else if (pal == 2 && j == 3){
                 PoleIgroka.AdrKor[0][5] = row;
                 PoleIgroka.AdrKor[1][5] = col;
                 PoleIgroka.AdrKor[2][5] = 1;
                 PoleIgroka.AdrKor[3][5] = pal;
-            }
-            else if (pal == 1){
+            }else if (pal == 1){
                 if (j == 1) {
                     PoleIgroka.AdrKor[0][6] = row;
                     PoleIgroka.AdrKor[1][6] = col;
@@ -1311,32 +1322,32 @@ void pointKorabl(int pal, int colum){
             break;
         case 2:
             pointKor(row, col, pal, polog, 1);
-            if(pal == 4){
+            if (pal == 4){
                 PoleIgroka.AdrKor[0][0] = row;
                 PoleIgroka.AdrKor[1][0] = col;
                 PoleIgroka.AdrKor[2][0] = 2;
                 PoleIgroka.AdrKor[3][0] = pal;
-            }else if(pal == 3 && j == 1){
+            }else if (pal == 3 && j == 1){
                 PoleIgroka.AdrKor[0][1] = row;
                 PoleIgroka.AdrKor[1][1] = col;
                 PoleIgroka.AdrKor[2][1] = 2;
                 PoleIgroka.AdrKor[3][1] = pal;
-            }else if(pal == 3 && j == 2){
+            }else if (pal == 3 && j == 2){
                 PoleIgroka.AdrKor[0][2] = row;
                 PoleIgroka.AdrKor[1][2] = col;
                 PoleIgroka.AdrKor[2][2] = 2;
                 PoleIgroka.AdrKor[3][2] = pal;
-            }else if(pal == 2 && j == 1){
+            }else if (pal == 2 && j == 1){
                 PoleIgroka.AdrKor[0][3] = row;
                 PoleIgroka.AdrKor[1][3] = col;
                 PoleIgroka.AdrKor[2][3] = 2;
                 PoleIgroka.AdrKor[3][3] = pal;
-            }else if(pal == 2 && j == 2){
+            }else if (pal == 2 && j == 2){
                 PoleIgroka.AdrKor[0][4] = row;
                 PoleIgroka.AdrKor[1][4] = col;
                 PoleIgroka.AdrKor[2][4] = 2;
                 PoleIgroka.AdrKor[3][4] = pal;
-            }else if(pal == 2 && j == 3){
+            }else if (pal == 2 && j == 3){
                 PoleIgroka.AdrKor[0][5] = row;
                 PoleIgroka.AdrKor[1][5] = col;
                 PoleIgroka.AdrKor[2][5] = 2;
@@ -1569,7 +1580,8 @@ int Pobeda(){
     }
     if (ig == 0) return 2;
     if (pc == 0) return 1;
-    else return 0;
+    else
+        return 0;
 }
 
 void kill_or_not(Pole& m, Pole& n){
@@ -1597,30 +1609,32 @@ void kill_or_not(Pole& m, Pole& n){
 }
 
 void printpole(){
-    std::cout <<"   | A | B | C | D | E | F | G | H | I | J |";
-    std::cout <<std::setfill(' ') <<std::setw(11) <<" ";
-    std::cout <<"   | A | B | C | D | E | F | G | H | I | J |";
-    std::cout <<std::endl;
-    std::cout <<std::setfill('-') <<std::setw(44) <<"-";
-    std::cout <<std::setfill(' ') <<std::setw(11) <<" ";
-    std::cout <<std::setfill('-') <<std::setw(44) <<"-";
-    std::cout <<std::endl;
+    std::cout << "   | A | B | C | D | E | F | G | H | I | J |";
+    std::cout << std::setfill(' ') << std::setw(11) << " ";
+    std::cout << "   | A | B | C | D | E | F | G | H | I | J |";
+    std::cout << std::endl;
+    std::cout << std::setfill('-') << std::setw(44) << "-";
+    std::cout << std::setfill(' ') << std::setw(11) << " ";
+    std::cout << std::setfill('-') << std::setw(44) << "-";
+    std::cout << std::endl;
     for (int i = 0; i < 10 ; i++){
-        std::cout <<std::setfill(' ') <<std::setw(2) << i+1;
+        std::cout << std::setfill(' ') << std::setw(2) << i+1;
         std::cout << " | ";
         for (int j = 0; j < 10; j++){
             if (PoleIgroka.pole[i][j] == 0) {
-                if (PoleComp.shots[i][j] == 1) std::cout <<"*";
-                else std::cout <<" ";
+                if (PoleComp.shots[i][j] == 1) std::cout << "*";
+                else
+                    std::cout << " ";
             } else if (PoleIgroka.pole[i][j] == 1){
-                if (PoleComp.shots[i][j] == 2 || PoleComp.shots[i][j] == 3) std::cout <<"X";
-                else std::cout <<"1";
+                if (PoleComp.shots[i][j] == 2 || PoleComp.shots[i][j] == 3) std::cout << "X";
+                else
+                    std::cout << "1";
             }
-            std::cout <<" | ";
+            std::cout << " | ";
         }
-        std::cout <<std::setfill(' ') <<std::setw(10) <<" ";
-        std::cout <<std::setw(2) <<i + 1;
-        std::cout <<" | ";
+        std::cout << std::setfill(' ') << std::setw(10) << " ";
+        std::cout << std::setw(2) << i + 1;
+        std::cout << " | ";
         for (int j = 0; j < 10; j++){
             if (PoleIgroka.shots[i][j] == 2 || PoleIgroka.shots[i][j] == 3) std::cout <<"X";
             else if (PoleIgroka.shots[i][j] == 1) std::cout <<"*";
@@ -1640,7 +1654,8 @@ void HodPC();
 void HodIgroka(){
     if (Pobeda() != 0 ){
         if (Pobeda() == 1) std::cout <<"Вы выиграли! Поздравляю!";
-        if (Pobeda() == 2) std::cout <<"К сожалению, выиграл компьютер. Не расстраивайте, вы можете взять реванш!";
+        if (Pobeda() == 2) std::cout <<"К сожалению, выиграл компьютер.
+            Не расстраивайте, вы можете взять реванш!";
         return;
     }
     int status = 1;
@@ -1648,12 +1663,13 @@ void HodIgroka(){
     printpole();
     do{
         char y1;
-        std::cout <<"Ваш ход. \n Введите координаты выстрела: ";
-        std::cin >>y1 >>x;
+        std::cout << "Ваш ход. \n Введите координаты выстрела: ";
+        std::cin >> y1 >> x;
         y = read(y1);
         if (x >= 1 && x <= 10 && y >= 1 && y <= 10){
             if (PoleIgroka.shots[x - 1][y - 1] != 0) {
-                std::cout <<"Вы уже стреляли по этим координатам" <<std::endl;
+                std::cout << "Вы уже стреляли по этим координатам"
+                << std::endl;
                 x = -1;
                 y = -1;
             }
@@ -1661,7 +1677,7 @@ void HodIgroka(){
         if (x < 0 || y < 0 || x > 10 || y > 10){
             x = -1;
             y = -1;
-            std::cout <<"\n Вы ввели неверные координаты. \n";
+            std::cout << "\n Вы ввели неверные координаты. \n";
         }
     }while(x == -1 || y == -1 || x > 10 || y > 10);
     if (PoleComp.pole[x - 1][y - 1] == 1) PoleIgroka.shots[x - 1][y - 1] = 2;
@@ -1669,24 +1685,25 @@ void HodIgroka(){
     kill_or_not(PoleComp, PoleIgroka);
     if (PoleComp.pole[x - 1][y - 1] == 1) status = find_korPC(x - 1, y - 1);
     if (status == 1){
-        std::cout <<"Мимо" <<std::endl;
+        std::cout << "Мимо" << std::endl;
         HodPC();
     } else if (status == 2){
-        std::cout <<"Корабль ранен" <<std::endl;
+        std::cout << "Корабль ранен" << std::endl;
         HodIgroka();
     } else if (status == 3){
-        std::cout <<"Корабль потоплен" <<std::endl;
+        std::cout << "Корабль потоплен" << std::endl;
         HodIgroka();
     }
 }
 
 void HodPC(){
     if (Pobeda() != 0){
-        if (Pobeda() == 1) std::cout <<"Вы выиграли! Поздравляю!";
-        if (Pobeda() == 2) std::cout <<"К сожалению, выиграл компьютер. Не расстраивайте, вы можете взять реванш!";
+        if (Pobeda() == 1) std::cout << "Вы выиграли! Поздравляю!";
+        if (Pobeda() == 2) std::cout << "К сожалению, выиграл компьютер.
+            Не расстраивайте, вы можете взять реванш!";
         return;
     }
-    std::cout <<"Mой черёд! \n";
+    std::cout << "Mой черёд! \n";
     int x = -1, y = -1;
     int hurt[2][10];
     for (int i = 0; i < 10; i++) hurt[0][i] = -1;
@@ -1711,7 +1728,8 @@ void HodPC(){
             if (y == 0){
                 if (PoleComp.shots[x + 1][y] == 0 && PoleComp.shots[x][y + 1] != 2){
                     if (PoleIgroka.pole[x + 1][y] == 1) PoleComp.shots[x + 1][y] = 2;
-                    else PoleComp.shots[x + 1][y] = 1;
+                    else
+                        PoleComp.shots[x + 1][y] = 1;
                     x++;
                 } else if (PoleComp.shots[x + 1][y] == 2){
                     x++;
@@ -1721,10 +1739,12 @@ void HodPC(){
                     x++;
                     if (PoleIgroka.pole[x][y] == 1){
                         PoleComp.shots[x][y] = 2;
-                    } else PoleComp.shots[x][y] = 1;
+                    } else
+                        PoleComp.shots[x][y] = 1;
                 } else if (PoleComp.shots[x][y + 1] == 0 && PoleComp.shots[x + 1][y] != 2){
                     if (PoleIgroka.pole[x][y + 1] == 1) PoleComp.shots[x][y + 1] = 2;
-                    else PoleComp.shots[x][y + 1] = 1;
+                    else
+                        PoleComp.shots[x][y + 1] = 1;
                     y++;
                 } else if (PoleComp.shots[x][y + 1] == 2){
                     y++;
@@ -1732,12 +1752,14 @@ void HodPC(){
                     y++;
                     if (PoleIgroka.pole[x][y] == 1){
                         PoleComp.shots[x][y] = 2;
-                    } else PoleComp.shots[x][y] = 1;
+                    } else
+                        PoleComp.shots[x][y] = 1;
                 }
             } else if (y == 9){
                 if (PoleComp.shots[x + 1][y] == 0 && PoleComp.shots[x][y - 1] != 2){
                     if (PoleIgroka.pole[x + 1][y] == 1) PoleComp.shots[x + 1][y] = 2;
-                    else PoleComp.shots[x + 1][y] = 1;
+                    else
+                        PoleComp.shots[x + 1][y] = 1;
                     x++;
                 } else if (PoleComp.shots[x + 1][y] == 2){
                     x++;
@@ -1747,21 +1769,25 @@ void HodPC(){
                     x++;
                     if (PoleIgroka.pole[x][y] == 1){
                         PoleComp.shots[x][y] = 2;
-                    } else PoleComp.shots[x][y] = 1;
+                    } else
+                        PoleComp.shots[x][y] = 1;
                 } else if (PoleComp.shots[x][y - 1] == 0 && PoleComp.shots[x + 1][y] != 2){
                     if (PoleIgroka.pole[x][y - 1] == 1) PoleComp.shots[x][y - 1] = 2;
-                    else PoleComp.shots[x][y - 1] = 1;
+                    else
+                        PoleComp.shots[x][y - 1] = 1;
                     y--;
                 } else if (PoleComp.shots[x][y - 1] == 2){
                     y--;
                     if (PoleComp.shots[x][y - 1] == 2) y--;
                     y--;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 }
             } else if (PoleComp.shots[x][y - 1] == 0 && PoleComp.shots[x + 1][y] != 2 /*&& PoleComp.shots[x][y + 1] != 2*/){
                 if (PoleIgroka.pole[x][y - 1] == 1) PoleComp.shots[x][y - 1] = 2;
-                else PoleComp.shots[x][y - 1] = 1;
+                else
+                    PoleComp.shots[x][y - 1] = 1;
                 y--;
             } else if (PoleComp.shots[x][y - 1] == 2){
                 y--;
@@ -1772,7 +1798,8 @@ void HodPC(){
                     if (PoleComp.shots[x][y - 1] == 0){
                         y--;
                         if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                        else PoleComp.shots[x][y] = 1;
+                        else
+                            PoleComp.shots[x][y] = 1;
                     } else if (PoleComp.shots[x][y - 1] == 1){
                             if (PoleComp.shots[x][y + 1] == 2) y++;
                         if (y < 9){
@@ -1780,19 +1807,22 @@ void HodPC(){
                         }
                         y++;
                         if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                        else PoleComp.shots[x][y] = 1;
+                        else
+                            PoleComp.shots[x][y] = 1;
                     }
                 } else {
                     while (PoleComp.shots[x][y] == 2) y++;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 }
             } else if (PoleComp.shots[x][y - 1] == 1 && PoleComp.shots[x][y + 1] == 1){
                 if (PoleComp.shots[x + 1][y] == 2) x++;
                 if (PoleComp.shots[x + 1][y] == 2) x++;
                 x++;
                 if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                else PoleComp.shots[x][y] = 1;
+                else
+                    PoleComp.shots[x][y] = 1;
             } else if (PoleComp.shots[x][y - 1] == 1 && PoleComp.shots[x + 1][y] != 2){
                 if (PoleComp.shots[x][y + 1] == 2) y++;
                 if (y < 9) {
@@ -1800,24 +1830,28 @@ void HodPC(){
                 }
                 y++;
                 if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                else PoleComp.shots[x][y] = 1;
+                else
+                    PoleComp.shots[x][y] = 1;
             } else if (PoleComp.shots[x + 1][y] == 2){
                 x++;
                 if (PoleComp.shots[x + 1][y] == 2) x++;
                 x++;
                 if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                else PoleComp.shots[x][y] = 1;
+                else
+                    PoleComp.shots[x][y] = 1;
             } else if (PoleComp.shots[x + 1][y] == 0){
                 x++;
                 if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                else PoleComp.shots[x][y] = 1;
+                else
+                    PoleComp.shots[x][y] = 1;
             }
         } else if (x == 9){
             if (y == 0){
                 if (PoleComp.shots[x - 1][y] == 0 && PoleComp.shots[x][y + 1] != 2){
                     x--;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 } else if (PoleComp.shots[x - 1][y] == 2){
                     x--;
                     if (PoleComp.shots[x - 1][y] == 2){
@@ -1826,23 +1860,27 @@ void HodPC(){
                     x--;
                     if (PoleIgroka.pole[x][y] == 1)
                         PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 } else if (PoleComp.shots[x][y + 1] == 0){
                     y++;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 } else if (PoleComp.shots[x][y + 1] == 2){
                     y++;
                     if (PoleComp.shots[x][y + 1] == 2) y++;
                     y++;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 }
             } else if (y == 9){
                 if (PoleComp.shots[x - 1][y] == 0 && PoleComp.shots[x][y - 1] != 2){
                     x--;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 } else if (PoleComp.shots[x - 1][y] == 2){
                     x--;
                     if (PoleComp.shots[x - 1][y] == 2){
@@ -1851,23 +1889,27 @@ void HodPC(){
                     x--;
                     if (PoleIgroka.pole[x][y] == 1)
                         PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 } else if (PoleComp.shots[x][y - 1] == 0){
                     y--;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 } else if (PoleComp.shots[x][y - 1] == 2){
                     y--;
                     if (PoleComp.shots[x][y - 1] == 2) y--;
                     y--;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 }
             } else {
                 if (PoleComp.shots[x][y - 1] == 0 && PoleComp.shots[x - 1][y] != 2){
                     y--;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 } else if (PoleComp.shots[x][y - 1] == 2){
                     y--;
                     if (y > 0){
@@ -1877,7 +1919,8 @@ void HodPC(){
                         if (PoleComp.shots[x][y - 1] == 0){
                             y--;
                             if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                            else PoleComp.shots[x][y] = 1;
+                            else
+                                PoleComp.shots[x][y] = 1;
                         } else {
                             if (y < 9){
                                 if (PoleComp.shots[x][y + 1] == 2) y++;
@@ -1887,19 +1930,22 @@ void HodPC(){
                             }
                             y++;
                             if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                            else PoleComp.shots[x][y] = 1;
+                            else
+                                PoleComp.shots[x][y] = 1;
                         }
                     } else {
                         while (PoleComp.shots[x][y] == 2) y++;
                         if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                        else PoleComp.shots[x][y] = 1;
+                        else
+                            PoleComp.shots[x][y] = 1;
                     }
                 } else if (PoleComp.shots[x][y - 1] == 1 && PoleComp.shots[x][y + 1] == 1){
                     if (PoleComp.shots[x - 1][y] == 2) x--;
                     if (PoleComp.shots[x - 1][y] == 2) x--;
                     x--;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 } else if (PoleComp.shots[x][y - 1] == 1 && PoleComp.shots[x - 1][y] != 2){
                     if (PoleComp.shots[x][y + 1] == 2) y++;
                     if (y < 9) {
@@ -1907,17 +1953,20 @@ void HodPC(){
                     }
                     y++;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 } else if (PoleComp.shots[x - 1][y] == 2){
                     x--;
                     if (PoleComp.shots[x - 1][y] == 2) x--;
                     x--;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 } else if (PoleComp.shots[x - 1][y] == 0){
                     x--;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 }
             }
         } else if (y == 0 && x > 0 && x < 9){
@@ -1930,24 +1979,27 @@ void HodPC(){
                     if (PoleComp.shots[x - 1][y] == 0){
                         x--;
                         if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                        else PoleComp.shots[x][y] = 1;
+                        else
+                            PoleComp.shots[x][y] = 1;
                     } else if (PoleComp.shots[x - 1][y] == 1){
                         while (PoleComp.shots[x][y] == 2) x++;
-                        //x++;
                         if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                        else PoleComp.shots[x][y] = 1;
+                        else
+                            PoleComp.shots[x][y] = 1;
                     }
                 } else {
                     while (PoleComp.shots[x][y] == 2) x++;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 }
             } else if (PoleComp.shots[x - 1][y] == 1 && PoleComp.shots[x + 1][y] == 1){
                 if (PoleComp.shots[x][y + 1] == 2) y++;
                 if (PoleComp.shots[x][y + 1] == 2) y++;
                 y++;
                 if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                else PoleComp.shots[x][y] = 1;
+                else
+                    PoleComp.shots[x][y] = 1;
             } else if (PoleComp.shots[x - 1][y] == 1 && PoleComp.shots[x][y + 1] != 2){
                 if (PoleComp.shots[x + 1][y] == 2) x++;
                 if (x < 9){
@@ -1955,21 +2007,25 @@ void HodPC(){
                 }
                 x++;
                 if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                else PoleComp.shots[x][y] = 1;
+                else
+                    PoleComp.shots[x][y] = 1;
             } else if (PoleComp.shots[x - 1][y] == 0 && PoleComp.shots[x][y + 1] != 2){
                 x--;
                 if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                else PoleComp.shots[x][y] = 1;
+                else
+                    PoleComp.shots[x][y] = 1;
             } else if (PoleComp.shots[x][y + 1] == 2){
                 y++;
                 if (PoleComp.shots[x][y + 1] == 2) y++;
                 y++;
                 if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                else PoleComp.shots[x][y] = 1;
+                else
+                    PoleComp.shots[x][y] = 1;
             } else if (PoleComp.shots[x][y + 1] == 0){
                 y++;
                 if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                else PoleComp.shots[x][y] = 1;
+                else
+                    PoleComp.shots[x][y] = 1;
             }
         } else if (y == 9 && x > 0 && x < 9){
             if (PoleComp.shots[x - 1][y] == 2 ){
@@ -1981,23 +2037,27 @@ void HodPC(){
                     if (PoleComp.shots[x - 1][y] == 0){
                         x--;
                         if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                        else PoleComp.shots[x][y] = 1;
+                        else
+                            PoleComp.shots[x][y] = 1;
                     } else {
                         while (PoleComp.shots[x][y] == 2) x++;
                         if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                        else PoleComp.shots[x][y] = 1;
+                        else
+                            PoleComp.shots[x][y] = 1;
                     }
                 } else {
                     while (PoleComp.shots[x][y] == 2) x++;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 }
             } else if (PoleComp.shots[x - 1][y] == 1 && PoleComp.shots[x + 1][y] == 1){
                 if (PoleComp.shots[x][y - 1] == 2) y--;
                 if (PoleComp.shots[x][y - 1] == 2) y--;
                 y--;
                 if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                else PoleComp.shots[x][y] = 1;
+                else
+                    PoleComp.shots[x][y] = 1;
             } else if (PoleComp.shots[x - 1][y] == 1 && PoleComp.shots[x][y - 1] != 2){
                 if (PoleComp.shots[x + 1][y] == 2) x++;
                 if (x < 9){
@@ -2005,21 +2065,25 @@ void HodPC(){
                 }
                 x++;
                 if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                else PoleComp.shots[x][y] = 1;
+                else
+                    PoleComp.shots[x][y] = 1;
             } else if (PoleComp.shots[x - 1][y] == 0 && PoleComp.shots[x][y - 1] != 2){
                 x--;
                 if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                else PoleComp.shots[x][y] = 1;
+                else
+                    PoleComp.shots[x][y] = 1;
             } else if (PoleComp.shots[x][y - 1] == 2){
                 y--;
                 if (PoleComp.shots[x][y - 1] == 2) y--;
                 y--;
                 if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                else PoleComp.shots[x][y] = 1;
+                else
+                    PoleComp.shots[x][y] = 1;
             } else if (PoleComp.shots[x][y - 1] == 0){
                 y--;
                 if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                else PoleComp.shots[x][y] = 1;
+                else
+                    PoleComp.shots[x][y] = 1;
             }
         } else {
             if (PoleComp.shots[x][y - 1] != 2 && PoleComp.shots[x][y + 1] != 2 &&
@@ -2034,25 +2098,30 @@ void HodPC(){
                         if (PoleComp.shots[x - 1][y] == 0){
                             x--;
                             if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                            else PoleComp.shots[x][y] = 1;
+                            else
+                                PoleComp.shots[x][y] = 1;
                         } else {
                             while (PoleComp.shots[x][y] == 2) x++;
                             if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                            else PoleComp.shots[x][y] = 1;
+                            else
+                                PoleComp.shots[x][y] = 1;
                         }
                     } else {
                         while (PoleComp.shots[x][y] == 2) x++;
                         if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                        else PoleComp.shots[x][y] = 1;
+                        else
+                            PoleComp.shots[x][y] = 1;
                     }
                 } else if (PoleComp.shots[x - 1][y] == 0){
                     x--;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 } else {
                     while (PoleComp.shots[x][y] == 2) x++;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 }
             } else {
                 if (PoleComp.shots[x][y - 1] == 2){
@@ -2064,25 +2133,30 @@ void HodPC(){
                         if (PoleComp.shots[x][y - 1] == 0){
                             y--;
                             if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                            else PoleComp.shots[x][y] = 1;
+                            else
+                                PoleComp.shots[x][y] = 1;
                         } else {
                             while (PoleComp.shots[x][y] == 2) y++;
                             if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                            else PoleComp.shots[x][y] = 1;
+                            else
+                                PoleComp.shots[x][y] = 1;
                         }
                     } else {
                         while (PoleComp.shots[x][y] == 2) y++;
                         if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                        else PoleComp.shots[x][y] = 1;
+                        else
+                            PoleComp.shots[x][y] = 1;
                     }
                 } else if (PoleComp.shots[x][y - 1] == 0){
                     y--;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 } else {
                     while (PoleComp.shots[x][y] == 2) y++;
                     if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
-                    else PoleComp.shots[x][y] = 1;
+                    else
+                        PoleComp.shots[x][y] = 1;
                 }
             }
         }
@@ -2093,52 +2167,53 @@ void HodPC(){
         }while (PoleComp.shots[x][y] != 0);
         if (PoleIgroka.pole[x][y] == 1){
             PoleComp.shots[x][y] = 2;
-        } else PoleComp.shots[x][y] = 1;
+        } else
+            PoleComp.shots[x][y] = 1;
     }
-    std::cout <<std::endl;
-    switch(y){
+    std::cout << std::endl;
+    switch (y){
         case 0:
-            std::cout <<'A';
+            std::cout << 'A';
             break;
         case 1:
-            std::cout <<'B';
+            std::cout << 'B';
             break;
         case 2:
-            std::cout <<'C';
+            std::cout << 'C';
             break;
         case 3:
-            std::cout <<'D';
+            std::cout << 'D';
             break;
         case 4:
-            std::cout <<'E';
+            std::cout << 'E';
             break;
         case 5:
-            std::cout <<'F';
+            std::cout << 'F';
             break;
         case 6:
-            std::cout <<'G';
+            std::cout << 'G';
             break;
         case 7:
-            std::cout <<'H';
+            std::cout << 'H';
             break;
         case 8:
-            std::cout <<'I';
+            std::cout << 'I';
             break;
         case 9:
-            std::cout <<'J';
+            std::cout << 'J';
             break;
     }
-    std::cout  <<" " <<x + 1;
+    std::cout << " " << x + 1;
     kill_or_not(PoleIgroka, PoleComp);
     if (PoleIgroka.pole[x][y] == 1) status = find_korIg(x, y);
     if (status == 1){
-        std::cout <<"\n Черт, я промахнулся" <<std::endl;
+        std::cout << "\n Черт, я промахнулся" << std::endl;
         HodIgroka();
     } else if (status == 2){
-        std::cout <<"\n Корабль ранен" <<std::endl;
+        std::cout << "\n Корабль ранен" << std::endl;
         HodPC();
     } else if (status == 3){
-        std::cout <<"\n Корабль потоплен" <<std::endl;
+        std::cout << "\n Корабль потоплен" << std::endl;
         HodPC();
     }
 }
