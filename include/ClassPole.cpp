@@ -1,4 +1,5 @@
 // Copyright 2018 Your Name <your_email>
+#include "ClassPole.h"
 
 Pole::Pole(){
     pole.resize(10);

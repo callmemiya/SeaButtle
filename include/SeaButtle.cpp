@@ -1,4 +1,5 @@
 // Copyright 2018 Your Name <your_email>
+#include "SeaButtle.h"
 
 unsigned int seed = time(NULL);
 
