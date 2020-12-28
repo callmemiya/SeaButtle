@@ -1,6 +1,8 @@
 // Copyright 2018 Your Name <your_email>
 #include "SeaButtle.h"
 
+unsigned int seed = time(NULL);
+
 int poiskAdresa(int row, int col, int pal, int polog, int user){
     if (polog == 1){
         int m = 0, f = pal;
@@ -155,7 +157,7 @@ void pointKorablVruchnuy(){
         <<std::endl;
         do{
             std::cin >> polog;
-            if (polog != 1 || polog != 2) std::cout
+            if (polog != 1 && polog != 2) std::cout
                 <<"Расположение корабля может быть только "
                 << "вертикальное(1) или горизонтальное(2)." <<std::endl;
         }while (polog != 1 && polog != 2);
@@ -183,7 +185,7 @@ void pointKorablVruchnuy(){
             << std::endl;
             do{
                 std::cin >> polog;
-                if (polog != 1 || polog != 2)
+                if (polog != 1 && polog != 2)
                     std::cout << "Расположение корабля может быть"
                     << " только вертикальное(1) или горизонтальное(2)."
                     << std::endl;
@@ -213,7 +215,7 @@ void pointKorablVruchnuy(){
             << std::endl;
             do{
                 std::cin >> polog;
-                if (polog != 1 || polog != 2)
+                if (polog != 1 && polog != 2)
                     std::cout << "Расположение корабля может быть"
                     << " только вертикальное(1) или горизонтальное(2)."
                     << std::endl;
@@ -255,10 +257,10 @@ void pointHardFirst(){
     int f[3][10] = {{1, 1, 1, 0, 1, 1, 1, 0, 1, 1},
         {1, 1, 1, 0, 1, 1, 0, 1, 1, 1},
         {1, 1, 0, 1, 1, 1, 0, 1, 1, 1}};
-    int rndm = rand_r() % 4;
+    int rndm = rand_r(&seed) % 4;
     if (rndm == 0){
-        int l = rand_r() % 3;
-        int j = rand_r() % 3;
+        int l = rand_r(&seed) % 3;
+        int j = rand_r(&seed) % 3;
         if (l == 0){
             PoleComp.AdrKor[0][0] = 0;
             PoleComp.AdrKor[1][0] = 0;
@@ -344,8 +346,8 @@ void pointHardFirst(){
             PoleComp.pole[9][i] = f[j][i];
         }
     } else if (rndm == 1){
-        int j = rand_r() % 3;
-        int l = rand_r() % 3;
+        int j = rand_r(&seed) % 3;
+        int l = rand_r(&seed) % 3;
         if (l == 0){
             PoleComp.AdrKor[0][0] = 9;
             PoleComp.AdrKor[1][0] = 0;
@@ -431,8 +433,8 @@ void pointHardFirst(){
             PoleComp.pole[0][i] = f[j][i];
         }
     } else if (rndm == 2){
-        int l = rand_r() % 3;
-        int j = rand_r() % 3;
+        int l = rand_r(&seed) % 3;
+        int j = rand_r(&seed) % 3;
         if (l == 0){
             PoleComp.AdrKor[0][0] = 0;
             PoleComp.AdrKor[1][0] = 0;
@@ -518,8 +520,8 @@ void pointHardFirst(){
             PoleComp.pole[i][9] = f[j][i];
         }
     } else {
-        int j = rand_r() % 3;
-        int l = rand_r() % 3;
+        int j = rand_r(&seed) % 3;
+        int l = rand_r(&seed) % 3;
         if (l == 0){
             PoleComp.AdrKor[0][0] = 0;
             PoleComp.AdrKor[1][0] = 9;
@@ -612,7 +614,7 @@ void pointHardThird(){
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
     {1, 0, 1, 1, 1, 0, 1, 1, 0, 1},
     {1, 0, 0, 0, 0, 0, 0, 0, 0, 1}};
-    int rndm = rand_r() % 4;
+    int rndm = rand_r(&seed) % 4;
     if (rndm == 0){
         PoleComp.AdrKor[0][0] = 0;
         PoleComp.AdrKor[1][0] = 0;
@@ -751,14 +753,14 @@ void pointHardPC(){
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
         {1, 0, 1, 1, 1, 0, 1, 1, 0, 1},
         {1, 0, 0, 0, 0, 0, 0, 0, 0, 1}};
-    int rnd = rand_r() % 3;
+    int rnd = rand_r(&seed) % 3;
     if (rnd == 0){
         pointHardFirst();
     } else if (rnd == 1){
-        int rndm = rand_r() % 4;
+        int rndm = rand_r(&seed) % 4;
         if (rndm == 0){
-            int l = rand_r() % 3;
-            int j = rand_r() % 3;
+            int l = rand_r(&seed) % 3;
+            int j = rand_r(&seed) % 3;
             if (l == 0){
                 PoleComp.AdrKor[0][0] = 0;
                 PoleComp.AdrKor[1][0] = 0;
@@ -844,8 +846,8 @@ void pointHardPC(){
                 PoleComp.pole[i][2] = f[j][i];
             }
         } else if (rndm == 1){
-            int l = rand_r() % 3;
-            int j = rand_r() % 3;
+            int l = rand_r(&seed) % 3;
+            int j = rand_r(&seed) % 3;
             if (l == 0){
                 PoleComp.AdrKor[0][0] = 0;
                 PoleComp.AdrKor[1][0] = 9;
@@ -931,8 +933,8 @@ void pointHardPC(){
                 PoleComp.pole[i][7] = f[j][i];
             }
         } else if (rndm == 2){
-            int l = rand_r() % 3;
-            int j = rand_r() % 3;
+            int l = rand_r(&seed) % 3;
+            int j = rand_r(&seed) % 3;
             if (l == 0){
                 PoleComp.AdrKor[0][0] = 0;
                 PoleComp.AdrKor[1][0] = 0;
@@ -1018,8 +1020,8 @@ void pointHardPC(){
                 PoleComp.pole[2][i] = f[j][i];
             }
         } else {
-            int l = rand_r() % 3;
-            int j = rand_r() % 3;
+            int l = rand_r(&seed) % 3;
+            int j = rand_r(&seed) % 3;
             if (l == 0){
                 PoleComp.AdrKor[0][0] = 9;
                 PoleComp.AdrKor[1][0] = 0;
@@ -1112,9 +1114,9 @@ void pointHardPC(){
         int row, col;
         do{
             do{
-                row = rand_r() % 10;
+                row = rand_r(&seed) % 10;
             }while (row + 1 > 10);
-            col = rand_r() % 10;
+            col = rand_r(&seed) % 10;
         }while (!poiskAdresa(row, col, 1, 1, 2));
         pointKor(row, col, 1, 1, 2);
         PoleComp.AdrKor[0][i] = row;
@@ -1134,16 +1136,16 @@ void pointKorablPC(int pal, int colum){
         if (polog == 1){
             do{
                 do{
-                    row = rand_r() % 10;
+                    row = rand_r(&seed) % 10;
                 }while (row + pal > 10);
-                col = rand_r() % 10;
+                col = rand_r(&seed) % 10;
             }while (!poiskAdresa(row, col, pal, polog, 2));
         } else {
             do{
                 do{
-                    col = rand_r() % 10;
+                    col = rand_r(&seed) % 10;
                 }while(col + pal > 10);
-                row = rand_r() % 10;
+                row = rand_r(&seed) % 10;
             }while (!poiskAdresa(row, col, pal, polog, 2));
         }
         switch (polog){
@@ -1269,20 +1271,20 @@ void pointKorabl(int pal, int colum){
         return;
     for (int j = 1; j <= colum; j++){
         int row, col;
-        int polog = 1 + rand_r() % 2;
+        int polog = 1 + rand_r(&seed) % 2;
         if (polog == 1){
             do{
                 do{
-                    row = rand_r() % 10;
+                    row = rand_r(&seed) % 10;
                 }while (row + pal > 10);
-                col = rand_r() % 10;
+                col = rand_r(&seed) % 10;
             }while (!poiskAdresa(row, col, pal, polog, 1));
         } else {
             do{
                 do{
-                    col = rand_r() % 10;
+                    col = rand_r(&seed) % 10;
                 }while(col + pal > 10);
-                row = rand_r() % 10;
+                row = rand_r(&seed) % 10;
             }while (!poiskAdresa(row, col, pal, polog, 1));
         }
         switch (polog){
@@ -2250,8 +2252,8 @@ void HodPC(){
         }
     }else {
         do{
-            x = rand_r() % 10;
-            y = rand_r() % 10;
+            x = rand_r(&seed) % 10;
+            y = rand_r(&seed) % 10;
         }while (PoleComp.shots[x][y] != 0);
         if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
         else
