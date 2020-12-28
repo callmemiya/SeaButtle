@@ -5,5 +5,5 @@
 
 TEST(SeaButtle, Poisk){
     int i = poiskAdresa(0, 0, 4, 1, 1);
-    EXCEPT_EQ(i, 1);
+    EXPECT_EQ(i, 1);
 }
