@@ -248,6 +248,365 @@ void pointKorablVruchnuy(){
     }
 }
 
+void pointHard(){
+    int m[3][10] = {{1, 1, 1, 1, 0, 1, 1, 0, 1, 1},
+        {1, 1, 0, 1, 1, 1, 1, 0, 1, 1},
+        {1, 1, 0, 1, 1, 0, 1, 1, 1, 1}};
+    int f[3][10] = {{1, 1, 1, 0, 1, 1, 1, 0, 1, 1},
+        {1, 1, 1, 0, 1, 1, 0, 1, 1, 1},
+        {1, 1, 0, 1, 1, 1, 0, 1, 1, 1}};
+    int rndm = rand_r() % 4;
+    if (rndm == 0){
+        int l = rand_r() % 3;
+        int j = rand_r() % 3;
+        if (l == 0){
+            PoleComp.AdrKor[0][0] = 0;
+            PoleComp.AdrKor[1][0] = 0;
+            PoleComp.AdrKor[2][0] = 2;
+            PoleComp.AdrKor[3][0] = 4;
+            PoleComp.AdrKor[0][3] = 0;
+            PoleComp.AdrKor[1][3] = 5;
+            PoleComp.AdrKor[2][3] = 2;
+            PoleComp.AdrKor[3][3] = 2;
+            PoleComp.AdrKor[0][4] = 0;
+            PoleComp.AdrKor[1][4] = 8;
+            PoleComp.AdrKor[2][4] = 2;
+            PoleComp.AdrKor[3][4] = 2;
+        }else if (l == 1){
+            PoleComp.AdrKor[0][3] = 0;
+            PoleComp.AdrKor[1][3] = 0;
+            PoleComp.AdrKor[2][3] = 2;
+            PoleComp.AdrKor[3][3] = 2;
+            PoleComp.AdrKor[0][0] = 0;
+            PoleComp.AdrKor[1][0] = 3;
+            PoleComp.AdrKor[2][0] = 2;
+            PoleComp.AdrKor[3][0] = 4;
+            PoleComp.AdrKor[0][4] = 0;
+            PoleComp.AdrKor[1][4] = 8;
+            PoleComp.AdrKor[2][4] = 2;
+            PoleComp.AdrKor[3][4] = 2;
+        } else {
+            PoleComp.AdrKor[0][3] = 0;
+            PoleComp.AdrKor[1][3] = 0;
+            PoleComp.AdrKor[2][3] = 2;
+            PoleComp.AdrKor[3][3] = 2;
+            PoleComp.AdrKor[0][4] = 0;
+            PoleComp.AdrKor[1][4] = 3;
+            PoleComp.AdrKor[2][4] = 2;
+            PoleComp.AdrKor[3][4] = 2;
+            PoleComp.AdrKor[0][0] = 0;
+            PoleComp.AdrKor[1][0] = 6;
+            PoleComp.AdrKor[2][0] = 2;
+            PoleComp.AdrKor[3][0] = 4;
+        }
+        if (j == 0){
+            PoleComp.AdrKor[0][1] = 9;
+            PoleComp.AdrKor[1][1] = 0;
+            PoleComp.AdrKor[2][1] = 2;
+            PoleComp.AdrKor[3][1] = 3;
+            PoleComp.AdrKor[0][2] = 9;
+            PoleComp.AdrKor[1][2] = 4;
+            PoleComp.AdrKor[2][2] = 2;
+            PoleComp.AdrKor[3][2] = 3;
+            PoleComp.AdrKor[0][5] = 9;
+            PoleComp.AdrKor[1][5] = 8;
+            PoleComp.AdrKor[2][5] = 2;
+            PoleComp.AdrKor[3][5] = 2;
+        } else if (j == 1){
+            PoleComp.AdrKor[0][1] = 9;
+            PoleComp.AdrKor[1][1] = 0;
+            PoleComp.AdrKor[2][1] = 2;
+            PoleComp.AdrKor[3][1] = 3;
+            PoleComp.AdrKor[0][5] = 9;
+            PoleComp.AdrKor[1][5] = 4;
+            PoleComp.AdrKor[2][5] = 2;
+            PoleComp.AdrKor[3][5] = 2;
+            PoleComp.AdrKor[0][2] = 9;
+            PoleComp.AdrKor[1][2] = 7;
+            PoleComp.AdrKor[2][2] = 2;
+            PoleComp.AdrKor[3][2] = 3;
+        } else {
+            PoleComp.AdrKor[0][5] = 9;
+            PoleComp.AdrKor[1][5] = 0;
+            PoleComp.AdrKor[2][5] = 2;
+            PoleComp.AdrKor[3][5] = 2;
+            PoleComp.AdrKor[0][1] = 9;
+            PoleComp.AdrKor[1][1] = 3;
+            PoleComp.AdrKor[2][1] = 2;
+            PoleComp.AdrKor[3][1] = 3;
+            PoleComp.AdrKor[0][2] = 9;
+            PoleComp.AdrKor[1][2] = 7;
+            PoleComp.AdrKor[2][2] = 2;
+            PoleComp.AdrKor[3][2] = 3;
+        }
+        for (int i = 0; i < 10; i++){
+            PoleComp.pole[0][i] = m[l][i];
+            PoleComp.pole[9][i] = f[j][i];
+        }
+    } else if (rndm == 1){
+        int j = rand_r() % 3;
+        int l = rand_r() % 3;
+        if (l == 0){
+            PoleComp.AdrKor[0][0] = 9;
+            PoleComp.AdrKor[1][0] = 0;
+            PoleComp.AdrKor[2][0] = 2;
+            PoleComp.AdrKor[3][0] = 4;
+            PoleComp.AdrKor[0][3] = 9;
+            PoleComp.AdrKor[1][3] = 5;
+            PoleComp.AdrKor[2][3] = 2;
+            PoleComp.AdrKor[3][3] = 2;
+            PoleComp.AdrKor[0][4] = 9;
+            PoleComp.AdrKor[1][4] = 8;
+            PoleComp.AdrKor[2][4] = 2;
+            PoleComp.AdrKor[3][4] = 2;
+        }else if (l == 1){
+            PoleComp.AdrKor[0][3] = 9;
+            PoleComp.AdrKor[1][3] = 0;
+            PoleComp.AdrKor[2][3] = 2;
+            PoleComp.AdrKor[3][3] = 2;
+            PoleComp.AdrKor[0][0] = 9;
+            PoleComp.AdrKor[1][0] = 3;
+            PoleComp.AdrKor[2][0] = 2;
+            PoleComp.AdrKor[3][0] = 4;
+            PoleComp.AdrKor[0][4] = 9;
+            PoleComp.AdrKor[1][4] = 8;
+            PoleComp.AdrKor[2][4] = 2;
+            PoleComp.AdrKor[3][4] = 2;
+        } else {
+            PoleComp.AdrKor[0][3] = 9;
+            PoleComp.AdrKor[1][3] = 0;
+            PoleComp.AdrKor[2][3] = 2;
+            PoleComp.AdrKor[3][3] = 2;
+            PoleComp.AdrKor[0][4] = 9;
+            PoleComp.AdrKor[1][4] = 3;
+            PoleComp.AdrKor[2][4] = 2;
+            PoleComp.AdrKor[3][4] = 2;
+            PoleComp.AdrKor[0][0] = 9;
+            PoleComp.AdrKor[1][0] = 6;
+            PoleComp.AdrKor[2][0] = 2;
+            PoleComp.AdrKor[3][0] = 4;
+        }
+        if (j == 0){
+            PoleComp.AdrKor[0][1] = 0;
+            PoleComp.AdrKor[1][1] = 0;
+            PoleComp.AdrKor[2][1] = 2;
+            PoleComp.AdrKor[3][1] = 3;
+            PoleComp.AdrKor[0][2] = 0;
+            PoleComp.AdrKor[1][2] = 4;
+            PoleComp.AdrKor[2][2] = 2;
+            PoleComp.AdrKor[3][2] = 3;
+            PoleComp.AdrKor[0][5] = 0;
+            PoleComp.AdrKor[1][5] = 8;
+            PoleComp.AdrKor[2][5] = 2;
+            PoleComp.AdrKor[3][5] = 2;
+        } else if (j == 1){
+            PoleComp.AdrKor[0][1] = 0;
+            PoleComp.AdrKor[1][1] = 0;
+            PoleComp.AdrKor[2][1] = 2;
+            PoleComp.AdrKor[3][1] = 3;
+            PoleComp.AdrKor[0][5] = 0;
+            PoleComp.AdrKor[1][5] = 4;
+            PoleComp.AdrKor[2][5] = 2;
+            PoleComp.AdrKor[3][5] = 2;
+            PoleComp.AdrKor[0][2] = 0;
+            PoleComp.AdrKor[1][2] = 7;
+            PoleComp.AdrKor[2][2] = 2;
+            PoleComp.AdrKor[3][2] = 3;
+        } else {
+            PoleComp.AdrKor[0][5] = 0;
+            PoleComp.AdrKor[1][5] = 0;
+            PoleComp.AdrKor[2][5] = 2;
+            PoleComp.AdrKor[3][5] = 2;
+            PoleComp.AdrKor[0][1] = 0;
+            PoleComp.AdrKor[1][1] = 3;
+            PoleComp.AdrKor[2][1] = 2;
+            PoleComp.AdrKor[3][1] = 3;
+            PoleComp.AdrKor[0][2] = 0;
+            PoleComp.AdrKor[1][2] = 7;
+            PoleComp.AdrKor[2][2] = 2;
+            PoleComp.AdrKor[3][2] = 3;
+        }
+        for (int i = 0; i < 10; i++){
+            PoleComp.pole[9][i] = m[l][i];
+            PoleComp.pole[0][i] = f[j][i];
+        }
+    } else if (rndm == 2){
+        int l = rand_r() % 3;
+        int j = rand_r() % 3;
+        if (l == 0){
+            PoleComp.AdrKor[0][0] = 0;
+            PoleComp.AdrKor[1][0] = 0;
+            PoleComp.AdrKor[2][0] = 1;
+            PoleComp.AdrKor[3][0] = 4;
+            PoleComp.AdrKor[0][3] = 5;
+            PoleComp.AdrKor[1][3] = 0;
+            PoleComp.AdrKor[2][3] = 1;
+            PoleComp.AdrKor[3][3] = 2;
+            PoleComp.AdrKor[0][4] = 8;
+            PoleComp.AdrKor[1][4] = 0;
+            PoleComp.AdrKor[2][4] = 1;
+            PoleComp.AdrKor[3][4] = 2;
+        } else if (l == 1){
+            PoleComp.AdrKor[0][3] = 0;
+            PoleComp.AdrKor[1][3] = 0;
+            PoleComp.AdrKor[2][3] = 1;
+            PoleComp.AdrKor[3][3] = 2;
+            PoleComp.AdrKor[0][0] = 3;
+            PoleComp.AdrKor[1][0] = 0;
+            PoleComp.AdrKor[2][0] = 1;
+            PoleComp.AdrKor[3][0] = 4;
+            PoleComp.AdrKor[0][4] = 8;
+            PoleComp.AdrKor[1][4] = 0;
+            PoleComp.AdrKor[2][4] = 1;
+            PoleComp.AdrKor[3][4] = 2;
+        } else {
+            PoleComp.AdrKor[0][3] = 0;
+            PoleComp.AdrKor[1][3] = 0;
+            PoleComp.AdrKor[2][3] = 1;
+            PoleComp.AdrKor[3][3] = 2;
+            PoleComp.AdrKor[0][4] = 3;
+            PoleComp.AdrKor[1][4] = 0;
+            PoleComp.AdrKor[2][4] = 1;
+            PoleComp.AdrKor[3][4] = 2;
+            PoleComp.AdrKor[0][0] = 6;
+            PoleComp.AdrKor[1][0] = 0;
+            PoleComp.AdrKor[2][0] = 1;
+            PoleComp.AdrKor[3][0] = 4;
+        }
+        if (j == 0){
+            PoleComp.AdrKor[0][1] = 0;
+            PoleComp.AdrKor[1][1] = 9;
+            PoleComp.AdrKor[2][1] = 1;
+            PoleComp.AdrKor[3][1] = 3;
+            PoleComp.AdrKor[0][2] = 4;
+            PoleComp.AdrKor[1][2] = 9;
+            PoleComp.AdrKor[2][2] = 1;
+            PoleComp.AdrKor[3][2] = 3;
+            PoleComp.AdrKor[0][5] = 8;
+            PoleComp.AdrKor[1][5] = 9;
+            PoleComp.AdrKor[2][5] = 1;
+            PoleComp.AdrKor[3][5] = 2;
+        } else if (j == 1){
+            PoleComp.AdrKor[0][1] = 0;
+            PoleComp.AdrKor[1][1] = 9;
+            PoleComp.AdrKor[2][1] = 1;
+            PoleComp.AdrKor[3][1] = 3;
+            PoleComp.AdrKor[0][5] = 4;
+            PoleComp.AdrKor[1][5] = 9;
+            PoleComp.AdrKor[2][5] = 1;
+            PoleComp.AdrKor[3][5] = 2;
+            PoleComp.AdrKor[0][2] = 7;
+            PoleComp.AdrKor[1][2] = 9;
+            PoleComp.AdrKor[2][2] = 1;
+            PoleComp.AdrKor[3][2] = 3;
+        } else {
+            PoleComp.AdrKor[0][5] = 0;
+            PoleComp.AdrKor[1][5] = 9;
+            PoleComp.AdrKor[2][5] = 1;
+            PoleComp.AdrKor[3][5] = 2;
+            PoleComp.AdrKor[0][1] = 3;
+            PoleComp.AdrKor[1][1] = 9;
+            PoleComp.AdrKor[2][1] = 1;
+            PoleComp.AdrKor[3][1] = 3;
+            PoleComp.AdrKor[0][2] = 7;
+            PoleComp.AdrKor[1][2] = 9;
+            PoleComp.AdrKor[2][2] = 1;
+            PoleComp.AdrKor[3][2] = 3;
+        }
+        for (int i = 0; i < 10; i++){
+            PoleComp.pole[i][0] = m[l][i];
+            PoleComp.pole[i][9] = f[j][i];
+        }
+    } else {
+        int j = rand_r() % 3;
+        int l = rand_r() % 3;
+        if (l == 0){
+            PoleComp.AdrKor[0][0] = 0;
+            PoleComp.AdrKor[1][0] = 9;
+            PoleComp.AdrKor[2][0] = 1;
+            PoleComp.AdrKor[3][0] = 4;
+            PoleComp.AdrKor[0][3] = 5;
+            PoleComp.AdrKor[1][3] = 9;
+            PoleComp.AdrKor[2][3] = 1;
+            PoleComp.AdrKor[3][3] = 2;
+            PoleComp.AdrKor[0][4] = 8;
+            PoleComp.AdrKor[1][4] = 9;
+            PoleComp.AdrKor[2][4] = 1;
+            PoleComp.AdrKor[3][4] = 2;
+        } else if (l == 1){
+            PoleComp.AdrKor[0][3] = 0;
+            PoleComp.AdrKor[1][3] = 9;
+            PoleComp.AdrKor[2][3] = 1;
+            PoleComp.AdrKor[3][3] = 2;
+            PoleComp.AdrKor[0][0] = 3;
+            PoleComp.AdrKor[1][0] = 9;
+            PoleComp.AdrKor[2][0] = 1;
+            PoleComp.AdrKor[3][0] = 4;
+            PoleComp.AdrKor[0][4] = 8;
+            PoleComp.AdrKor[1][4] = 9;
+            PoleComp.AdrKor[2][4] = 1;
+            PoleComp.AdrKor[3][4] = 2;
+        } else {
+            PoleComp.AdrKor[0][3] = 0;
+            PoleComp.AdrKor[1][3] = 9;
+            PoleComp.AdrKor[2][3] = 1;
+            PoleComp.AdrKor[3][3] = 2;
+            PoleComp.AdrKor[0][4] = 3;
+            PoleComp.AdrKor[1][4] = 9;
+            PoleComp.AdrKor[2][4] = 1;
+            PoleComp.AdrKor[3][4] = 2;
+            PoleComp.AdrKor[0][0] = 6;
+            PoleComp.AdrKor[1][0] = 9;
+            PoleComp.AdrKor[2][0] = 1;
+            PoleComp.AdrKor[3][0] = 4;
+        }
+        if (j == 0){
+            PoleComp.AdrKor[0][1] = 0;
+            PoleComp.AdrKor[1][1] = 0;
+            PoleComp.AdrKor[2][1] = 1;
+            PoleComp.AdrKor[3][1] = 3;
+            PoleComp.AdrKor[0][2] = 4;
+            PoleComp.AdrKor[1][2] = 0;
+            PoleComp.AdrKor[2][2] = 1;
+            PoleComp.AdrKor[3][2] = 3;
+            PoleComp.AdrKor[0][5] = 8;
+            PoleComp.AdrKor[1][5] = 0;
+            PoleComp.AdrKor[2][5] = 1;
+            PoleComp.AdrKor[3][5] = 2;
+        } else if (j == 1){
+            PoleComp.AdrKor[0][1] = 0;
+            PoleComp.AdrKor[1][1] = 0;
+            PoleComp.AdrKor[2][1] = 1;
+            PoleComp.AdrKor[3][1] = 3;
+            PoleComp.AdrKor[0][5] = 4;
+            PoleComp.AdrKor[1][5] = 0;
+            PoleComp.AdrKor[2][5] = 1;
+            PoleComp.AdrKor[3][5] = 2;
+            PoleComp.AdrKor[0][2] = 7;
+            PoleComp.AdrKor[1][2] = 0;
+            PoleComp.AdrKor[2][2] = 1;
+            PoleComp.AdrKor[3][2] = 3;
+        } else {
+            PoleComp.AdrKor[0][5] = 0;
+            PoleComp.AdrKor[1][5] = 0;
+            PoleComp.AdrKor[2][5] = 1;
+            PoleComp.AdrKor[3][5] = 2;
+            PoleComp.AdrKor[0][1] = 3;
+            PoleComp.AdrKor[1][1] = 0;
+            PoleComp.AdrKor[2][1] = 1;
+            PoleComp.AdrKor[3][1] = 3;
+            PoleComp.AdrKor[0][2] = 7;
+            PoleComp.AdrKor[1][2] = 0;
+            PoleComp.AdrKor[2][2] = 1;
+            PoleComp.AdrKor[3][2] = 3;
+        }
+        for (int i = 0; i < 10; i++){
+            PoleComp.pole[i][9] = m[l][i];
+            PoleComp.pole[i][0] = f[j][i];
+        }
+    }
+}
+
 void pointHardPC(){
     int m[3][10] = {{1, 1, 1, 1, 0, 1, 1, 0, 1, 1},
         {1, 1, 0, 1, 1, 1, 1, 0, 1, 1},
@@ -261,356 +620,7 @@ void pointHardPC(){
         {1, 0, 0, 0, 0, 0, 0, 0, 0, 1}};
     int rnd = rand_r() % 3;
     if (rnd == 0){
-        int rndm = rand_r() % 4;
-        if (rndm == 0){
-            int l = rand_r() % 3;
-            int j = rand_r() % 3;
-            if (l == 0){
-                PoleComp.AdrKor[0][0] = 0;
-                PoleComp.AdrKor[1][0] = 0;
-                PoleComp.AdrKor[2][0] = 2;
-                PoleComp.AdrKor[3][0] = 4;
-                PoleComp.AdrKor[0][3] = 0;
-                PoleComp.AdrKor[1][3] = 5;
-                PoleComp.AdrKor[2][3] = 2;
-                PoleComp.AdrKor[3][3] = 2;
-                PoleComp.AdrKor[0][4] = 0;
-                PoleComp.AdrKor[1][4] = 8;
-                PoleComp.AdrKor[2][4] = 2;
-                PoleComp.AdrKor[3][4] = 2;
-            }else if (l == 1){
-                PoleComp.AdrKor[0][3] = 0;
-                PoleComp.AdrKor[1][3] = 0;
-                PoleComp.AdrKor[2][3] = 2;
-                PoleComp.AdrKor[3][3] = 2;
-                PoleComp.AdrKor[0][0] = 0;
-                PoleComp.AdrKor[1][0] = 3;
-                PoleComp.AdrKor[2][0] = 2;
-                PoleComp.AdrKor[3][0] = 4;
-                PoleComp.AdrKor[0][4] = 0;
-                PoleComp.AdrKor[1][4] = 8;
-                PoleComp.AdrKor[2][4] = 2;
-                PoleComp.AdrKor[3][4] = 2;
-            } else {
-                PoleComp.AdrKor[0][3] = 0;
-                PoleComp.AdrKor[1][3] = 0;
-                PoleComp.AdrKor[2][3] = 2;
-                PoleComp.AdrKor[3][3] = 2;
-                PoleComp.AdrKor[0][4] = 0;
-                PoleComp.AdrKor[1][4] = 3;
-                PoleComp.AdrKor[2][4] = 2;
-                PoleComp.AdrKor[3][4] = 2;
-                PoleComp.AdrKor[0][0] = 0;
-                PoleComp.AdrKor[1][0] = 6;
-                PoleComp.AdrKor[2][0] = 2;
-                PoleComp.AdrKor[3][0] = 4;
-            }
-            if (j == 0){
-                PoleComp.AdrKor[0][1] = 9;
-                PoleComp.AdrKor[1][1] = 0;
-                PoleComp.AdrKor[2][1] = 2;
-                PoleComp.AdrKor[3][1] = 3;
-                PoleComp.AdrKor[0][2] = 9;
-                PoleComp.AdrKor[1][2] = 4;
-                PoleComp.AdrKor[2][2] = 2;
-                PoleComp.AdrKor[3][2] = 3;
-                PoleComp.AdrKor[0][5] = 9;
-                PoleComp.AdrKor[1][5] = 8;
-                PoleComp.AdrKor[2][5] = 2;
-                PoleComp.AdrKor[3][5] = 2;
-            } else if (j == 1){
-                PoleComp.AdrKor[0][1] = 9;
-                PoleComp.AdrKor[1][1] = 0;
-                PoleComp.AdrKor[2][1] = 2;
-                PoleComp.AdrKor[3][1] = 3;
-                PoleComp.AdrKor[0][5] = 9;
-                PoleComp.AdrKor[1][5] = 4;
-                PoleComp.AdrKor[2][5] = 2;
-                PoleComp.AdrKor[3][5] = 2;
-                PoleComp.AdrKor[0][2] = 9;
-                PoleComp.AdrKor[1][2] = 7;
-                PoleComp.AdrKor[2][2] = 2;
-                PoleComp.AdrKor[3][2] = 3;
-            } else {
-                PoleComp.AdrKor[0][5] = 9;
-                PoleComp.AdrKor[1][5] = 0;
-                PoleComp.AdrKor[2][5] = 2;
-                PoleComp.AdrKor[3][5] = 2;
-                PoleComp.AdrKor[0][1] = 9;
-                PoleComp.AdrKor[1][1] = 3;
-                PoleComp.AdrKor[2][1] = 2;
-                PoleComp.AdrKor[3][1] = 3;
-                PoleComp.AdrKor[0][2] = 9;
-                PoleComp.AdrKor[1][2] = 7;
-                PoleComp.AdrKor[2][2] = 2;
-                PoleComp.AdrKor[3][2] = 3;
-            }
-            for (int i = 0; i < 10; i++){
-                PoleComp.pole[0][i] = m[l][i];
-                PoleComp.pole[9][i] = f[j][i];
-            }
-        } else if (rndm == 1){
-            int j = rand_r() % 3;
-            int l = rand_r() % 3;
-            if (l == 0){
-                PoleComp.AdrKor[0][0] = 9;
-                PoleComp.AdrKor[1][0] = 0;
-                PoleComp.AdrKor[2][0] = 2;
-                PoleComp.AdrKor[3][0] = 4;
-                PoleComp.AdrKor[0][3] = 9;
-                PoleComp.AdrKor[1][3] = 5;
-                PoleComp.AdrKor[2][3] = 2;
-                PoleComp.AdrKor[3][3] = 2;
-                PoleComp.AdrKor[0][4] = 9;
-                PoleComp.AdrKor[1][4] = 8;
-                PoleComp.AdrKor[2][4] = 2;
-                PoleComp.AdrKor[3][4] = 2;
-            }else if (l == 1){
-                PoleComp.AdrKor[0][3] = 9;
-                PoleComp.AdrKor[1][3] = 0;
-                PoleComp.AdrKor[2][3] = 2;
-                PoleComp.AdrKor[3][3] = 2;
-                PoleComp.AdrKor[0][0] = 9;
-                PoleComp.AdrKor[1][0] = 3;
-                PoleComp.AdrKor[2][0] = 2;
-                PoleComp.AdrKor[3][0] = 4;
-                PoleComp.AdrKor[0][4] = 9;
-                PoleComp.AdrKor[1][4] = 8;
-                PoleComp.AdrKor[2][4] = 2;
-                PoleComp.AdrKor[3][4] = 2;
-            } else {
-                PoleComp.AdrKor[0][3] = 9;
-                PoleComp.AdrKor[1][3] = 0;
-                PoleComp.AdrKor[2][3] = 2;
-                PoleComp.AdrKor[3][3] = 2;
-                PoleComp.AdrKor[0][4] = 9;
-                PoleComp.AdrKor[1][4] = 3;
-                PoleComp.AdrKor[2][4] = 2;
-                PoleComp.AdrKor[3][4] = 2;
-                PoleComp.AdrKor[0][0] = 9;
-                PoleComp.AdrKor[1][0] = 6;
-                PoleComp.AdrKor[2][0] = 2;
-                PoleComp.AdrKor[3][0] = 4;
-            }
-            if (j == 0){
-                PoleComp.AdrKor[0][1] = 0;
-                PoleComp.AdrKor[1][1] = 0;
-                PoleComp.AdrKor[2][1] = 2;
-                PoleComp.AdrKor[3][1] = 3;
-                PoleComp.AdrKor[0][2] = 0;
-                PoleComp.AdrKor[1][2] = 4;
-                PoleComp.AdrKor[2][2] = 2;
-                PoleComp.AdrKor[3][2] = 3;
-                PoleComp.AdrKor[0][5] = 0;
-                PoleComp.AdrKor[1][5] = 8;
-                PoleComp.AdrKor[2][5] = 2;
-                PoleComp.AdrKor[3][5] = 2;
-            } else if (j == 1){
-                PoleComp.AdrKor[0][1] = 0;
-                PoleComp.AdrKor[1][1] = 0;
-                PoleComp.AdrKor[2][1] = 2;
-                PoleComp.AdrKor[3][1] = 3;
-                PoleComp.AdrKor[0][5] = 0;
-                PoleComp.AdrKor[1][5] = 4;
-                PoleComp.AdrKor[2][5] = 2;
-                PoleComp.AdrKor[3][5] = 2;
-                PoleComp.AdrKor[0][2] = 0;
-                PoleComp.AdrKor[1][2] = 7;
-                PoleComp.AdrKor[2][2] = 2;
-                PoleComp.AdrKor[3][2] = 3;
-            } else {
-                PoleComp.AdrKor[0][5] = 0;
-                PoleComp.AdrKor[1][5] = 0;
-                PoleComp.AdrKor[2][5] = 2;
-                PoleComp.AdrKor[3][5] = 2;
-                PoleComp.AdrKor[0][1] = 0;
-                PoleComp.AdrKor[1][1] = 3;
-                PoleComp.AdrKor[2][1] = 2;
-                PoleComp.AdrKor[3][1] = 3;
-                PoleComp.AdrKor[0][2] = 0;
-                PoleComp.AdrKor[1][2] = 7;
-                PoleComp.AdrKor[2][2] = 2;
-                PoleComp.AdrKor[3][2] = 3;
-            }
-            for (int i = 0; i < 10; i++){
-                PoleComp.pole[9][i] = m[l][i];
-                PoleComp.pole[0][i] = f[j][i];
-            }
-        } else if (rndm == 2){
-            int l = rand_r() % 3;
-            int j = rand_r() % 3;
-            if (l == 0){
-                PoleComp.AdrKor[0][0] = 0;
-                PoleComp.AdrKor[1][0] = 0;
-                PoleComp.AdrKor[2][0] = 1;
-                PoleComp.AdrKor[3][0] = 4;
-                PoleComp.AdrKor[0][3] = 5;
-                PoleComp.AdrKor[1][3] = 0;
-                PoleComp.AdrKor[2][3] = 1;
-                PoleComp.AdrKor[3][3] = 2;
-                PoleComp.AdrKor[0][4] = 8;
-                PoleComp.AdrKor[1][4] = 0;
-                PoleComp.AdrKor[2][4] = 1;
-                PoleComp.AdrKor[3][4] = 2;
-            } else if (l == 1){
-                PoleComp.AdrKor[0][3] = 0;
-                PoleComp.AdrKor[1][3] = 0;
-                PoleComp.AdrKor[2][3] = 1;
-                PoleComp.AdrKor[3][3] = 2;
-                PoleComp.AdrKor[0][0] = 3;
-                PoleComp.AdrKor[1][0] = 0;
-                PoleComp.AdrKor[2][0] = 1;
-                PoleComp.AdrKor[3][0] = 4;
-                PoleComp.AdrKor[0][4] = 8;
-                PoleComp.AdrKor[1][4] = 0;
-                PoleComp.AdrKor[2][4] = 1;
-                PoleComp.AdrKor[3][4] = 2;
-            } else {
-                PoleComp.AdrKor[0][3] = 0;
-                PoleComp.AdrKor[1][3] = 0;
-                PoleComp.AdrKor[2][3] = 1;
-                PoleComp.AdrKor[3][3] = 2;
-                PoleComp.AdrKor[0][4] = 3;
-                PoleComp.AdrKor[1][4] = 0;
-                PoleComp.AdrKor[2][4] = 1;
-                PoleComp.AdrKor[3][4] = 2;
-                PoleComp.AdrKor[0][0] = 6;
-                PoleComp.AdrKor[1][0] = 0;
-                PoleComp.AdrKor[2][0] = 1;
-                PoleComp.AdrKor[3][0] = 4;
-            }
-            if (j == 0){
-                PoleComp.AdrKor[0][1] = 0;
-                PoleComp.AdrKor[1][1] = 9;
-                PoleComp.AdrKor[2][1] = 1;
-                PoleComp.AdrKor[3][1] = 3;
-                PoleComp.AdrKor[0][2] = 4;
-                PoleComp.AdrKor[1][2] = 9;
-                PoleComp.AdrKor[2][2] = 1;
-                PoleComp.AdrKor[3][2] = 3;
-                PoleComp.AdrKor[0][5] = 8;
-                PoleComp.AdrKor[1][5] = 9;
-                PoleComp.AdrKor[2][5] = 1;
-                PoleComp.AdrKor[3][5] = 2;
-            } else if (j == 1){
-                PoleComp.AdrKor[0][1] = 0;
-                PoleComp.AdrKor[1][1] = 9;
-                PoleComp.AdrKor[2][1] = 1;
-                PoleComp.AdrKor[3][1] = 3;
-                PoleComp.AdrKor[0][5] = 4;
-                PoleComp.AdrKor[1][5] = 9;
-                PoleComp.AdrKor[2][5] = 1;
-                PoleComp.AdrKor[3][5] = 2;
-                PoleComp.AdrKor[0][2] = 7;
-                PoleComp.AdrKor[1][2] = 9;
-                PoleComp.AdrKor[2][2] = 1;
-                PoleComp.AdrKor[3][2] = 3;
-            } else {
-                PoleComp.AdrKor[0][5] = 0;
-                PoleComp.AdrKor[1][5] = 9;
-                PoleComp.AdrKor[2][5] = 1;
-                PoleComp.AdrKor[3][5] = 2;
-                PoleComp.AdrKor[0][1] = 3;
-                PoleComp.AdrKor[1][1] = 9;
-                PoleComp.AdrKor[2][1] = 1;
-                PoleComp.AdrKor[3][1] = 3;
-                PoleComp.AdrKor[0][2] = 7;
-                PoleComp.AdrKor[1][2] = 9;
-                PoleComp.AdrKor[2][2] = 1;
-                PoleComp.AdrKor[3][2] = 3;
-            }
-            for (int i = 0; i < 10; i++){
-                PoleComp.pole[i][0] = m[l][i];
-                PoleComp.pole[i][9] = f[j][i];
-            }
-        } else {
-            int j = rand_r() % 3;
-            int l = rand_r() % 3;
-            if (l == 0){
-                PoleComp.AdrKor[0][0] = 0;
-                PoleComp.AdrKor[1][0] = 9;
-                PoleComp.AdrKor[2][0] = 1;
-                PoleComp.AdrKor[3][0] = 4;
-                PoleComp.AdrKor[0][3] = 5;
-                PoleComp.AdrKor[1][3] = 9;
-                PoleComp.AdrKor[2][3] = 1;
-                PoleComp.AdrKor[3][3] = 2;
-                PoleComp.AdrKor[0][4] = 8;
-                PoleComp.AdrKor[1][4] = 9;
-                PoleComp.AdrKor[2][4] = 1;
-                PoleComp.AdrKor[3][4] = 2;
-            } else if (l == 1){
-                PoleComp.AdrKor[0][3] = 0;
-                PoleComp.AdrKor[1][3] = 9;
-                PoleComp.AdrKor[2][3] = 1;
-                PoleComp.AdrKor[3][3] = 2;
-                PoleComp.AdrKor[0][0] = 3;
-                PoleComp.AdrKor[1][0] = 9;
-                PoleComp.AdrKor[2][0] = 1;
-                PoleComp.AdrKor[3][0] = 4;
-                PoleComp.AdrKor[0][4] = 8;
-                PoleComp.AdrKor[1][4] = 9;
-                PoleComp.AdrKor[2][4] = 1;
-                PoleComp.AdrKor[3][4] = 2;
-            } else {
-                PoleComp.AdrKor[0][3] = 0;
-                PoleComp.AdrKor[1][3] = 9;
-                PoleComp.AdrKor[2][3] = 1;
-                PoleComp.AdrKor[3][3] = 2;
-                PoleComp.AdrKor[0][4] = 3;
-                PoleComp.AdrKor[1][4] = 9;
-                PoleComp.AdrKor[2][4] = 1;
-                PoleComp.AdrKor[3][4] = 2;
-                PoleComp.AdrKor[0][0] = 6;
-                PoleComp.AdrKor[1][0] = 9;
-                PoleComp.AdrKor[2][0] = 1;
-                PoleComp.AdrKor[3][0] = 4;
-            }
-            if (j == 0){
-                PoleComp.AdrKor[0][1] = 0;
-                PoleComp.AdrKor[1][1] = 0;
-                PoleComp.AdrKor[2][1] = 1;
-                PoleComp.AdrKor[3][1] = 3;
-                PoleComp.AdrKor[0][2] = 4;
-                PoleComp.AdrKor[1][2] = 0;
-                PoleComp.AdrKor[2][2] = 1;
-                PoleComp.AdrKor[3][2] = 3;
-                PoleComp.AdrKor[0][5] = 8;
-                PoleComp.AdrKor[1][5] = 0;
-                PoleComp.AdrKor[2][5] = 1;
-                PoleComp.AdrKor[3][5] = 2;
-            } else if (j == 1){
-                PoleComp.AdrKor[0][1] = 0;
-                PoleComp.AdrKor[1][1] = 0;
-                PoleComp.AdrKor[2][1] = 1;
-                PoleComp.AdrKor[3][1] = 3;
-                PoleComp.AdrKor[0][5] = 4;
-                PoleComp.AdrKor[1][5] = 0;
-                PoleComp.AdrKor[2][5] = 1;
-                PoleComp.AdrKor[3][5] = 2;
-                PoleComp.AdrKor[0][2] = 7;
-                PoleComp.AdrKor[1][2] = 0;
-                PoleComp.AdrKor[2][2] = 1;
-                PoleComp.AdrKor[3][2] = 3;
-            } else {
-                PoleComp.AdrKor[0][5] = 0;
-                PoleComp.AdrKor[1][5] = 0;
-                PoleComp.AdrKor[2][5] = 1;
-                PoleComp.AdrKor[3][5] = 2;
-                PoleComp.AdrKor[0][1] = 3;
-                PoleComp.AdrKor[1][1] = 0;
-                PoleComp.AdrKor[2][1] = 1;
-                PoleComp.AdrKor[3][1] = 3;
-                PoleComp.AdrKor[0][2] = 7;
-                PoleComp.AdrKor[1][2] = 0;
-                PoleComp.AdrKor[2][2] = 1;
-                PoleComp.AdrKor[3][2] = 3;
-            }
-            for (int i = 0; i < 10; i++){
-                PoleComp.pole[i][9] = m[l][i];
-                PoleComp.pole[i][0] = f[j][i];
-            }
-        }
+        pointHard();
     } else if (rnd == 1){
         int rndm = rand_r() % 4;
         if (rndm == 0){
@@ -1107,141 +1117,142 @@ void pointHardPC(){
 }
 
 void pointKorablPC(int pal, int colum){
-    if (pal == 0)
+    if (pal == 0){
             return;
-        for (int j = 1; j <= colum; j++){
-            int row = 0, col = 0;
-            int polog = 1 + rand_r() % 2;
-            if (polog == 1){
+    }
+    for (int j = 1; j <= colum; j++){
+        int row = 0, col = 0;
+        int polog = 1 + rand_r() % 2;
+        if (polog == 1){
+            do{
                 do{
-                    do{
-                        row = rand_r() % 10;
-                    }while (row + pal > 10);
-                    col = rand_r() % 10;
-                }while (!poiskAdresa(row, col, pal, polog, 2));
-            } else {
-                do{
-                    do{
-                        col = rand_r() % 10;
-                    }while(col + pal > 10);
                     row = rand_r() % 10;
-                }while (!poiskAdresa(row, col, pal, polog, 2));
-            }
-            switch (polog){
-            case 1:
-                pointKor(row, col, pal, polog, 2);
-                if (pal == 4){
-                    PoleComp.AdrKor[0][0] = row;
-                    PoleComp.AdrKor[1][0] = col;
-                    PoleComp.AdrKor[2][0] = 1;
-                    PoleComp.AdrKor[3][0] = pal;
-                }else if (pal == 3 && j == 1){
-                    PoleComp.AdrKor[0][1] = row;
-                    PoleComp.AdrKor[1][1] = col;
-                    PoleComp.AdrKor[2][1] = 1;
-                    PoleComp.AdrKor[3][1] = pal;
-                }else if (pal == 3 && j == 2){
-                    PoleComp.AdrKor[0][2] = row;
-                    PoleComp.AdrKor[1][2] = col;
-                    PoleComp.AdrKor[2][2] = 1;
-                    PoleComp.AdrKor[3][2] = pal;
-                }else if (pal == 2 && j == 1){
-                    PoleComp.AdrKor[0][3] = row;
-                    PoleComp.AdrKor[1][3] = col;
-                    PoleComp.AdrKor[2][3] = 1;
-                    PoleComp.AdrKor[3][3] = pal;
-                }else if (pal == 2 && j == 2){
-                    PoleComp.AdrKor[0][4] = row;
-                    PoleComp.AdrKor[1][4] = col;
-                    PoleComp.AdrKor[2][4] = 1;
-                    PoleComp.AdrKor[3][4] = pal;
-                }else if (pal == 2 && j == 3){
-                    PoleComp.AdrKor[0][5] = row;
-                    PoleComp.AdrKor[1][5] = col;
-                    PoleComp.AdrKor[2][5] = 1;
-                    PoleComp.AdrKor[3][5] = pal;
-                }else if (pal == 1){
-                    if (j == 1) {
-                        PoleComp.AdrKor[0][6] = row;
-                        PoleComp.AdrKor[1][6] = col;
-                        PoleComp.AdrKor[2][6] = 1;
-                        PoleComp.AdrKor[3][6] = pal;
-                    }else if (j == 2) {
-                        PoleComp.AdrKor[0][7] = row;
-                        PoleComp.AdrKor[1][7] = col;
-                        PoleComp.AdrKor[2][7] = 1;
-                        PoleComp.AdrKor[3][7] = pal;
-                    }else if (j == 3) {
-                        PoleComp.AdrKor[0][8] = row;
-                        PoleComp.AdrKor[1][8] = col;
-                        PoleComp.AdrKor[2][8] = 1;
-                        PoleComp.AdrKor[3][8] = pal;
-                    }else {
-                        PoleComp.AdrKor[0][9] = row;
-                        PoleComp.AdrKor[1][9] = col;
-                        PoleComp.AdrKor[2][9] = 1;
-                        PoleComp.AdrKor[3][9] = pal;
-                    }
-                }
-                break;
-            case 2:
-                pointKor(row, col, pal, polog, 2);
-                if (pal == 4){
-                    PoleComp.AdrKor[0][0] = row;
-                    PoleComp.AdrKor[1][0] = col;
-                    PoleComp.AdrKor[2][0] = 2;
-                    PoleComp.AdrKor[3][0] = pal;
-                }else if (pal == 3 && j == 1){
-                    PoleComp.AdrKor[0][1] = row;
-                    PoleComp.AdrKor[1][1] = col;
-                    PoleComp.AdrKor[2][1] = 2;
-                    PoleComp.AdrKor[3][1] = pal;
-                }else if (pal == 3 && j == 2){
-                    PoleComp.AdrKor[0][2] = row;
-                    PoleComp.AdrKor[1][2] = col;
-                    PoleComp.AdrKor[2][2] = 2;
-                    PoleComp.AdrKor[3][2] = pal;
-                }else if (pal == 2 && j == 1){
-                    PoleComp.AdrKor[0][3] = row;
-                    PoleComp.AdrKor[1][3] = col;
-                    PoleComp.AdrKor[2][3] = 2;
-                    PoleComp.AdrKor[3][3] = pal;
-                }else if (pal == 2 && j == 2){
-                    PoleComp.AdrKor[0][4] = row;
-                    PoleComp.AdrKor[1][4] = col;
-                    PoleComp.AdrKor[2][4] = 2;
-                    PoleComp.AdrKor[3][4] = pal;
-                }else if (pal == 2 && j == 3){
-                    PoleComp.AdrKor[0][5] = row;
-                    PoleComp.AdrKor[1][5] = col;
-                    PoleComp.AdrKor[2][5] = 2;
-                    PoleComp.AdrKor[3][5] = pal;
-                }else if (pal == 1){
-                    if (j == 1) {
-                        PoleComp.AdrKor[0][6] = row;
-                        PoleComp.AdrKor[1][6] = col;
-                        PoleComp.AdrKor[2][6] = 2;
-                        PoleComp.AdrKor[3][6] = pal;
-                    }else if (j == 2) {
-                        PoleComp.AdrKor[0][7] = row;
-                        PoleComp.AdrKor[1][7] = col;
-                        PoleComp.AdrKor[2][7] = 2;
-                        PoleComp.AdrKor[3][7] = pal;
-                    }else if (j == 3) {
-                        PoleComp.AdrKor[0][8] = row;
-                        PoleComp.AdrKor[1][8] = col;
-                        PoleComp.AdrKor[2][8] = 2;
-                        PoleComp.AdrKor[3][8] = pal;
-                    }else {
-                        PoleComp.AdrKor[0][9] = row;
-                        PoleComp.AdrKor[1][9] = col;
-                        PoleComp.AdrKor[2][9] = 2;
-                        PoleComp.AdrKor[3][9] = pal;
-                    }
-                }
-                break;
-            }
+                }while (row + pal > 10);
+                col = rand_r() % 10;
+            }while (!poiskAdresa(row, col, pal, polog, 2));
+        } else {
+            do{
+                do{
+                    col = rand_r() % 10;
+                }while(col + pal > 10);
+                row = rand_r() % 10;
+            }while (!poiskAdresa(row, col, pal, polog, 2));
         }
+        switch (polog){
+        case 1:
+            pointKor(row, col, pal, polog, 2);
+            if (pal == 4){
+                PoleComp.AdrKor[0][0] = row;
+                PoleComp.AdrKor[1][0] = col;
+                PoleComp.AdrKor[2][0] = 1;
+                PoleComp.AdrKor[3][0] = pal;
+            }else if (pal == 3 && j == 1){
+                PoleComp.AdrKor[0][1] = row;
+                PoleComp.AdrKor[1][1] = col;
+                PoleComp.AdrKor[2][1] = 1;
+                PoleComp.AdrKor[3][1] = pal;
+            }else if (pal == 3 && j == 2){
+                PoleComp.AdrKor[0][2] = row;
+                PoleComp.AdrKor[1][2] = col;
+                PoleComp.AdrKor[2][2] = 1;
+                PoleComp.AdrKor[3][2] = pal;
+            }else if (pal == 2 && j == 1){
+                PoleComp.AdrKor[0][3] = row;
+                PoleComp.AdrKor[1][3] = col;
+                PoleComp.AdrKor[2][3] = 1;
+                PoleComp.AdrKor[3][3] = pal;
+            }else if (pal == 2 && j == 2){
+                PoleComp.AdrKor[0][4] = row;
+                PoleComp.AdrKor[1][4] = col;
+                PoleComp.AdrKor[2][4] = 1;
+                PoleComp.AdrKor[3][4] = pal;
+            }else if (pal == 2 && j == 3){
+                PoleComp.AdrKor[0][5] = row;
+                PoleComp.AdrKor[1][5] = col;
+                PoleComp.AdrKor[2][5] = 1;
+                PoleComp.AdrKor[3][5] = pal;
+            }else if (pal == 1){
+                if (j == 1) {
+                    PoleComp.AdrKor[0][6] = row;
+                    PoleComp.AdrKor[1][6] = col;
+                    PoleComp.AdrKor[2][6] = 1;
+                    PoleComp.AdrKor[3][6] = pal;
+                }else if (j == 2) {
+                    PoleComp.AdrKor[0][7] = row;
+                    PoleComp.AdrKor[1][7] = col;
+                    PoleComp.AdrKor[2][7] = 1;
+                    PoleComp.AdrKor[3][7] = pal;
+                }else if (j == 3) {
+                    PoleComp.AdrKor[0][8] = row;
+                    PoleComp.AdrKor[1][8] = col;
+                    PoleComp.AdrKor[2][8] = 1;
+                    PoleComp.AdrKor[3][8] = pal;
+                }else {
+                    PoleComp.AdrKor[0][9] = row;
+                    PoleComp.AdrKor[1][9] = col;
+                    PoleComp.AdrKor[2][9] = 1;
+                    PoleComp.AdrKor[3][9] = pal;
+                }
+            }
+            break;
+        case 2:
+            pointKor(row, col, pal, polog, 2);
+            if (pal == 4){
+                PoleComp.AdrKor[0][0] = row;
+                PoleComp.AdrKor[1][0] = col;
+                PoleComp.AdrKor[2][0] = 2;
+                PoleComp.AdrKor[3][0] = pal;
+            }else if (pal == 3 && j == 1){
+                PoleComp.AdrKor[0][1] = row;
+                PoleComp.AdrKor[1][1] = col;
+                PoleComp.AdrKor[2][1] = 2;
+                PoleComp.AdrKor[3][1] = pal;
+            }else if (pal == 3 && j == 2){
+                PoleComp.AdrKor[0][2] = row;
+                PoleComp.AdrKor[1][2] = col;
+                PoleComp.AdrKor[2][2] = 2;
+                PoleComp.AdrKor[3][2] = pal;
+            }else if (pal == 2 && j == 1){
+                PoleComp.AdrKor[0][3] = row;
+                PoleComp.AdrKor[1][3] = col;
+                PoleComp.AdrKor[2][3] = 2;
+                PoleComp.AdrKor[3][3] = pal;
+            }else if (pal == 2 && j == 2){
+                PoleComp.AdrKor[0][4] = row;
+                PoleComp.AdrKor[1][4] = col;
+                PoleComp.AdrKor[2][4] = 2;
+                PoleComp.AdrKor[3][4] = pal;
+            }else if (pal == 2 && j == 3){
+                PoleComp.AdrKor[0][5] = row;
+                PoleComp.AdrKor[1][5] = col;
+                PoleComp.AdrKor[2][5] = 2;
+                PoleComp.AdrKor[3][5] = pal;
+            }else if (pal == 1){
+                if (j == 1) {
+                    PoleComp.AdrKor[0][6] = row;
+                    PoleComp.AdrKor[1][6] = col;
+                    PoleComp.AdrKor[2][6] = 2;
+                    PoleComp.AdrKor[3][6] = pal;
+                }else if (j == 2) {
+                    PoleComp.AdrKor[0][7] = row;
+                    PoleComp.AdrKor[1][7] = col;
+                    PoleComp.AdrKor[2][7] = 2;
+                    PoleComp.AdrKor[3][7] = pal;
+                }else if (j == 3) {
+                    PoleComp.AdrKor[0][8] = row;
+                    PoleComp.AdrKor[1][8] = col;
+                    PoleComp.AdrKor[2][8] = 2;
+                    PoleComp.AdrKor[3][8] = pal;
+                }else {
+                    PoleComp.AdrKor[0][9] = row;
+                    PoleComp.AdrKor[1][9] = col;
+                    PoleComp.AdrKor[2][9] = 2;
+                    PoleComp.AdrKor[3][9] = pal;
+                }
+            }
+            break;
+        }
+    }
     pointKorablPC(pal-1, colum+1);
 }
 
@@ -1699,6 +1710,41 @@ void HodIgroka(){
     } else if (status == 3){
         std::cout << "Корабль потоплен" << std::endl;
         HodIgroka();
+    }
+}
+
+void pr(int y){
+    switch (y){
+        case 0:
+            std::cout << 'A';
+            break;
+        case 1:
+            std::cout << 'B';
+            break;
+        case 2:
+            std::cout << 'C';
+            break;
+        case 3:
+            std::cout << 'D';
+            break;
+        case 4:
+            std::cout << 'E';
+            break;
+        case 5:
+            std::cout << 'F';
+            break;
+        case 6:
+            std::cout << 'G';
+            break;
+        case 7:
+            std::cout << 'H';
+            break;
+        case 8:
+            std::cout << 'I';
+            break;
+        case 9:
+            std::cout << 'J';
+            break;
     }
 }
 
@@ -2222,38 +2268,7 @@ void HodPC(){
             PoleComp.shots[x][y] = 1;
     }
     std::cout << std::endl;
-    switch (y){
-        case 0:
-            std::cout << 'A';
-            break;
-        case 1:
-            std::cout << 'B';
-            break;
-        case 2:
-            std::cout << 'C';
-            break;
-        case 3:
-            std::cout << 'D';
-            break;
-        case 4:
-            std::cout << 'E';
-            break;
-        case 5:
-            std::cout << 'F';
-            break;
-        case 6:
-            std::cout << 'G';
-            break;
-        case 7:
-            std::cout << 'H';
-            break;
-        case 8:
-            std::cout << 'I';
-            break;
-        case 9:
-            std::cout << 'J';
-            break;
-    }
+    void pr(y);
     std::cout << " " << x + 1;
     kill_or_not(PoleIgroka, PoleComp);
     if (PoleIgroka.pole[x][y] == 1) status = find_korIg(x, y);
