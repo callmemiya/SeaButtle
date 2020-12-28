@@ -1,10 +1,10 @@
 #ifndef SeaButtle_h
 #define SeaButtle_h
-#include "ClassPole.h"
-#include "SeaButtle.cpp"
+
 #include <iostream>
 #include <iomanip>
 #include <vector>
+#include "ClassPole.h"
 
 extern Pole PoleIgroka;
 extern Pole PoleComp;
@@ -36,5 +36,7 @@ void printpole();
 void HodIgroka();
 
 void HodPC();
+
+#include "SeaButtle.cpp"
 
 #endif /* SeaButtle_h */

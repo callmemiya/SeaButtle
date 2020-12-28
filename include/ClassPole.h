@@ -2,7 +2,6 @@
 #ifndef INCLUDE_CLASSPOLE_HPP_
 #define INCLUDE_CLASSPOLE_HPP_
 
-#include "ClassPole.cpp"
 #include <iostream>
 #include <iomanip>
 #include <vector>
@@ -18,5 +17,7 @@ public:
     void clear();
     void print();
 };
+
+#include "ClassPole.cpp"
 
 #endif // INCLUDE_CLASSPOLE_HPP_
