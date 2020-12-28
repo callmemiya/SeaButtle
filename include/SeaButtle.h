@@ -1,6 +1,7 @@
 #ifndef SeaButtle_h
 #define SeaButtle_h
 #include "ClassPole.hpp"
+#include "SeaButtle.cpp"
 #include <iostream>
 #include <iomanip>
 #include <vector>
