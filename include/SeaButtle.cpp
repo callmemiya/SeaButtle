@@ -2256,7 +2256,7 @@ void HodPC(){
             PoleComp.shots[x][y] = 1;
     }
     std::cout << std::endl;
-    void pr(y);
+    pr(y);
     std::cout << " " << x + 1;
     kill_or_not(PoleIgroka, PoleComp);
     if (PoleIgroka.pole[x][y] == 1) status = find_korIg(x, y);
