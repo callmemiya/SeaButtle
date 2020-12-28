@@ -1,3 +1,4 @@
+#pragma once
 #ifndef SeaButtle_h
 #define SeaButtle_h
 
