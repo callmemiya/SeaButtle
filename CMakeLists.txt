@@ -48,7 +48,7 @@ target_include_directories(tests
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
         )
 # TODO: change template word to project name and delete this comment
-target_link_libraries(tests GTest::main template)
+target_link_libraries(tests GTest::main)
 
 enable_testing()
 add_test(NAME unit_tests COMMAND tests)
@@ -58,7 +58,7 @@ if (BUILD_COVERAGE)
     list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
     find_package(codecov)
     # TODO: change template word to project name and delete this comment
-    add_coverage(template)
+    add_coverage(main)
     add_coverage(tests)
     list(APPEND LCOV_REMOVE_PATTERNS "'${PROJECT_SOURCE_DIR}/tests/*'")
     coverage_evaluate()
