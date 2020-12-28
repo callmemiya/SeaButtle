@@ -1,5 +1,5 @@
 // Copyright 2018 Your Name <your_email>
-#include "ClassPole.hpp"
+#include "ClassPole.h"
 #include "SeaButtle.h"
 
 Pole PoleIgroka;
