@@ -144,7 +144,7 @@ void pointKorablVruchnuy(){
         << "четырехпалубного корабля: X и Y" <<std::endl;
         do{
             char y1;
-            std::cin >>y1 >>x;
+            std::cin >> y1 >> x;
             y = read(y1);
             if (x < 1 || y < 1 || x > 10 || y > 10)
                 std::cout << "Координаты введены некорректно,"
@@ -249,12 +249,16 @@ void pointKorablVruchnuy(){
 }
 
 void pointHardPC(){
-    int m[3][10] = {{1,1,1,1,0,1,1,0,1,1}, {1,1,0,1,1,1,1,0,1,1},
-        {1,1,0,1,1,0,1,1,1,1}};
-    int f[3][10] = {{1,1,1,0,1,1,1,0,1,1}, {1,1,1,0,1,1,0,1,1,1},
-        {1,1,0,1,1,1,0,1,1,1}};
-    int n[4][10] = {{1,1,1,1,0,1,1,1,0,1}, {0,0,0,0,0,0,0,0,0,1},
-        {1,0,1,1,1,0,1,1,0,1}, {1,0,0,0,0,0,0,0,0,1}};
+    int m[3][10] = {{1, 1, 1, 1, 0, 1, 1, 0, 1, 1},
+        {1, 1, 0, 1, 1, 1, 1, 0, 1, 1},
+        {1, 1, 0, 1, 1, 0, 1, 1, 1, 1}};
+    int f[3][10] = {{1, 1, 1, 0, 1, 1, 1, 0, 1, 1},
+        {1, 1, 1, 0, 1, 1, 0, 1, 1, 1},
+        {1, 1, 0, 1, 1, 1, 0, 1, 1, 1}};
+    int n[4][10] = {{1, 1, 1, 1, 0, 1, 1, 1, 0, 1},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+        {1, 0, 1, 1, 1, 0, 1, 1, 0, 1},
+        {1, 0, 0, 0, 0, 0, 0, 0, 0, 1}};
     int rnd = rand_r() % 3;
     if (rnd == 0){
         int rndm = rand_r() % 4;
@@ -1090,9 +1094,9 @@ void pointHardPC(){
         int row, col;
         do{
             do{
-                row = rand() % 10;
+                row = rand_r() % 10;
             }while (row + 1 > 10);
-            col = rand() % 10;
+            col = rand_r() % 10;
         }while (!poiskAdresa(row, col, 1, 1, 2));
         pointKor(row, col, 1, 1, 2);
         PoleComp.AdrKor[0][i] = row;
@@ -1115,7 +1119,7 @@ void pointKorablPC(int pal, int colum){
                     }while (row + pal > 10);
                     col = rand_r() % 10;
                 }while (!poiskAdresa(row, col, pal, polog, 2));
-            } else if (polog == 2) {
+            } else {
                 do{
                     do{
                         col = rand_r() % 10;
@@ -2125,9 +2129,12 @@ void HodPC(){
                     PoleComp.shots[x][y] = 1;
             }
         } else {
-            if (PoleComp.shots[x][y - 1] != 2 && PoleComp.shots[x][y + 1] != 2 &&
-                !((PoleComp.shots[x - 1][y] == 1 || PoleComp.shots[x - 1][y] == 4)
-                  && (PoleComp.shots[x + 1][y] == 1 || PoleComp.shots[x + 1][y] == 4))){
+            if (PoleComp.shots[x][y - 1] != 2 &&
+                PoleComp.shots[x][y + 1] != 2 &&
+                !((PoleComp.shots[x - 1][y] == 1 ||
+                   PoleComp.shots[x - 1][y] == 4)
+                  && (PoleComp.shots[x + 1][y] == 1 ||
+                      PoleComp.shots[x + 1][y] == 4))){
                 if (PoleComp.shots[x - 1][y] == 2){
                     x--;
                     if (x > 0){
@@ -2187,7 +2194,8 @@ void HodPC(){
                         }
                     } else {
                         while (PoleComp.shots[x][y] == 2) y++;
-                        if (PoleIgroka.pole[x][y] == 1) PoleComp.shots[x][y] = 2;
+                        if (PoleIgroka.pole[x][y] == 1)
+                            PoleComp.shots[x][y] = 2;
                         else
                             PoleComp.shots[x][y] = 1;
                     }
