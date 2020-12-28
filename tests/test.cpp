@@ -1,6 +1,6 @@
 // Copyright 2018 Your Name <your_email>
 #include <gtest/gtest.h>
-#include "../include/SeaButtle.hpp"
+#include "SeaButtle.hpp"
 #include <vector>
 
 TEST(SeaButtle, Poisk){
