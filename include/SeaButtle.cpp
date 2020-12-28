@@ -749,10 +749,6 @@ void pointHardPC(){
     int f[3][10] = {{1, 1, 1, 0, 1, 1, 1, 0, 1, 1},
         {1, 1, 1, 0, 1, 1, 0, 1, 1, 1},
         {1, 1, 0, 1, 1, 1, 0, 1, 1, 1}};
-    int n[4][10] = {{1, 1, 1, 1, 0, 1, 1, 1, 0, 1},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-        {1, 0, 1, 1, 1, 0, 1, 1, 0, 1},
-        {1, 0, 0, 0, 0, 0, 0, 0, 0, 1}};
     int rnd = rand_r(&seed) % 3;
     if (rnd == 0){
         pointHardFirst();
@@ -1132,7 +1128,7 @@ void pointKorablPC(int pal, int colum){
     }
     for (int j = 1; j <= colum; j++){
         int row = 0, col = 0;
-        int polog = 1 + rand_r() % 2;
+        int polog = 1 + rand_r(&seed) % 2;
         if (polog == 1){
             do{
                 do{
@@ -1758,7 +1754,7 @@ void pr(int y){
     }
 }
 
-int HodPCFirst(int x){
+int HodPCFirst(int x, int y){
     x--;
     if (x > 0){
         if (PoleComp.shots[x - 1][y] == 2) x--;
@@ -2088,7 +2084,7 @@ void HodPC(){
             }
         } else if (y == 0 && x > 0 && x < 9){
             if (PoleComp.shots[x - 1][y] == 2){
-                x = HodPCFirst(x);
+                x = HodPCFirst(x, y);
             } else if (PoleComp.shots[x - 1][y] == 1 &&
                        PoleComp.shots[x + 1][y] == 1){
                 if (PoleComp.shots[x][y + 1] == 2) y++;
@@ -2128,7 +2124,7 @@ void HodPC(){
             }
         } else if (y == 9 && x > 0 && x < 9){
             if (PoleComp.shots[x - 1][y] == 2){
-                x = HodPCFirst(x);
+                x = HodPCFirst(x, y);
             } else if (PoleComp.shots[x - 1][y] == 1 &&
                        PoleComp.shots[x + 1][y] == 1){
                 if (PoleComp.shots[x][y - 1] == 2) y--;
