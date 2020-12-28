@@ -31,7 +31,7 @@ hunter_add_package(GTest)
 find_package(GTest CONFIG REQUIRED)
 
 # TODO: change template word to project name and delete this comment
-add_library(template STATIC
+add_executable(main
         # enum your files and delete this comment
         ${CMAKE_CURRENT_SOURCE_DIR}/SeaButtle/main.cpp
         )
@@ -41,7 +41,7 @@ add_executable(tests
         )
 
 # TODO: change template word to project name and delete this comment
-target_include_directories(template
+target_include_directories(main
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
         )
 target_include_directories(tests
