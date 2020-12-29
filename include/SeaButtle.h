@@ -27,6 +27,8 @@ extern int find_korPC(int x, int y);
 
 extern int find_korIg(int x, int y);
 
+extern void kill_or_not(Pole& m, Pole& n);
+
 extern int Pobeda();
 
 extern void printpole();

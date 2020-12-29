@@ -13,14 +13,11 @@ public:
     std::vector<std::vector<int>> pole;
     int shots[10][10];
     int AdrKor[5][10];
-    extern Pole();
+    Pole();
     explicit Pole(std::vector<std::vector<int>> m);
-    extern void clear();
-    extern void print();
+    void clear();
+    void print();
 };
-
-
-extern void kill_or_not(Pole& m, Pole& n);
 
 //#include "ClassPole.cpp"
 
