@@ -19,6 +19,6 @@ public:
     void print();
 };
 
-//#include "ClassPole.cpp"
+#include "ClassPole.cpp"
 
 #endif // INCLUDE_CLASSPOLE_HPP_
