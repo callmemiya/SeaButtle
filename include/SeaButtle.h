@@ -5,6 +5,7 @@
 #include <iostream>
 #include <iomanip>
 #include <vector>
+#include "ClassPole.h"
 
 extern Pole PoleIgroka;
 extern Pole PoleComp;
@@ -36,7 +37,5 @@ extern void printpole();
 extern void HodIgroka();
 
 extern void HodPC();
-
-//#include "SeaButtle.cpp"
 
 #endif /* SeaButtle_h */

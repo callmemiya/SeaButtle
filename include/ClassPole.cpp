@@ -70,27 +70,3 @@ void Pole::print(){
         std::cout <<std::setfill('-') <<std::setw(44) <<"-" <<std::endl;
     }
 }
-
-void kill_or_not(Pole& m, Pole& n){
-    for (int i = 0; i < 10; i++){
-        int l = 0;
-        for (int j = 0; j < m.AdrKor[3][i]; j++){
-            if (m.AdrKor[2][i] == 1){
-                if (n.shots[m.AdrKor[0][i] + j][m.AdrKor[1][i]] == 2) l++;
-            } else if (m.AdrKor[2][i] == 2){
-                if (n.shots[m.AdrKor[0][i]][m.AdrKor[1][i] + j] == 2) l++;
-            }
-        }
-        if (l > 0) m.AdrKor[4][i] = 1;
-        if (l == m.AdrKor[3][i]) {
-            m.AdrKor[4][i] = 2;
-            for (int k = 0; k < m.AdrKor[3][i]; k++){
-                if (m.AdrKor[2][i] == 1){
-                    n.shots[m.AdrKor[0][i] + k][m.AdrKor[1][i]] = 3;
-                } else if (m.AdrKor[2][i] == 2){
-                    n.shots[m.AdrKor[0][i]][m.AdrKor[1][i] + k] = 3;
-                }
-            }
-        }
-    }
-}
