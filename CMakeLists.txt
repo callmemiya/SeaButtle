@@ -32,7 +32,7 @@ add_executable(tests
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
         )
 
-target_include_directories(seabuttle
+target_include_directories(SeaButtle
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
         )
 
