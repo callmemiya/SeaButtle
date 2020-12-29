@@ -13,10 +13,10 @@ public:
     std::vector<std::vector<int>> pole;
     int shots[10][10];
     int AdrKor[5][10];
-    Pole();
+    extern Pole();
     explicit Pole(std::vector<std::vector<int>> m);
-    void clear();
-    void print();
+    extern void clear();
+    extern void print();
 };
 
 #include "ClassPole.cpp"

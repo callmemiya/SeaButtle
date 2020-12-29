@@ -10,33 +10,33 @@
 extern Pole PoleIgroka;
 extern Pole PoleComp;
 
-int poiskAdresa(int row, int col, int pal, int polog, int user);
+extern int poiskAdresa(int row, int col, int pal, int polog, int user);
 
-void pointKor(int row, int col, int pal, int polog, int user);
+extern void pointKor(int row, int col, int pal, int polog, int user);
 
-int read(char y);
+extern int read(char y);
 
-void pointKorablVruchnuy();
+extern void pointKorablVruchnuy();
 
-void pointHardPC();
+extern void pointHardPC();
 
-void pointKorablPC(int pal, int colum);
+extern void pointKorablPC(int pal, int colum);
 
-void pointKorabl(int pal, int colum);
+extern void pointKorabl(int pal, int colum);
 
-int find_korPC(int x, int y);
+extern int find_korPC(int x, int y);
 
-int find_korIg(int x, int y);
+extern int find_korIg(int x, int y);
 
-int Pobeda();
+extern int Pobeda();
 
-void kill_or_not(Pole& m, Pole& n);
+extern void kill_or_not(Pole& m, Pole& n);
 
-void printpole();
+extern void printpole();
 
-void HodIgroka();
+extern void HodIgroka();
 
-void HodPC();
+extern void HodPC();
 
 #include "SeaButtle.cpp"
 
