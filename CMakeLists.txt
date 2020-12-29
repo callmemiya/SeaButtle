@@ -28,7 +28,7 @@ endif (UNIX)
 hunter_add_package(GTest)
 find_package(GTest CONFIG REQUIRED)
 
-add_library(seabuttle STATIC
+add_executable(seabuttle STATIC
         ${CMAKE_CURRENT_SOURCE_DIR}/SeaButtle/main.cpp
         )
 add_executable(tests
