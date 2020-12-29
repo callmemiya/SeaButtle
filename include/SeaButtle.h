@@ -35,6 +35,6 @@ extern void HodIgroka();
 
 extern void HodPC();
 
-#include "SeaButtle.cpp"
+//#include "SeaButtle.cpp"
 
 #endif /* SeaButtle_h */

@@ -13,15 +13,15 @@ public:
     std::vector<std::vector<int>> pole;
     int shots[10][10];
     int AdrKor[5][10];
-    Pole();
+    extern Pole();
     explicit Pole(std::vector<std::vector<int>> m);
-    void clear();
-    void print();
+    extern void clear();
+    extern void print();
 };
 
 
 extern void kill_or_not(Pole& m, Pole& n);
 
-#include "ClassPole.cpp"
+//#include "ClassPole.cpp"
 
 #endif // INCLUDE_CLASSPOLE_HPP_
