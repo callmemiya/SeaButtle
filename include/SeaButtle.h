@@ -5,7 +5,7 @@
 #include <iostream>
 #include <iomanip>
 #include <vector>
-#include "ClassPole.h"
+//#include "ClassPole.h"
 
 extern Pole PoleIgroka;
 extern Pole PoleComp;
@@ -29,8 +29,6 @@ extern int find_korPC(int x, int y);
 extern int find_korIg(int x, int y);
 
 extern int Pobeda();
-
-extern void kill_or_not(Pole& m, Pole& n);
 
 extern void printpole();
 

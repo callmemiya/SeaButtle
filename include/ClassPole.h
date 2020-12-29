@@ -19,6 +19,9 @@ public:
     void print();
 };
 
+
+extern void kill_or_not(Pole& m, Pole& n);
+
 #include "ClassPole.cpp"
 
 #endif // INCLUDE_CLASSPOLE_HPP_
