@@ -19,6 +19,7 @@ HunterGate(
 )
 
 project(seabuttle)
+
 if (UNIX)
     string(APPEND CMAKE_CXX_FLAGS " -pedantic -Werror -Wall -Wextra")
     string(APPEND CMAKE_CXX_FLAGS " -Wno-unused-command-line-argument")
@@ -27,6 +28,10 @@ endif (UNIX)
 
 hunter_add_package(GTest)
 find_package(GTest CONFIG REQUIRED)
+
+add_library(seabuttle 
+	STATIC ${CMAKE_CURRENT_SOURCE_DIR}/SeaButtle/main.cpp
+	)
 
 add_executable(tests
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
