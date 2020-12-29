@@ -1,5 +1,4 @@
 // Copyright 2018 Your Name <your_email>
-#pragma once
 #include "SeaButtle.h"
 
 unsigned int seed = time(NULL);
