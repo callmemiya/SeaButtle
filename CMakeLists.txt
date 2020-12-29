@@ -28,19 +28,17 @@ endif (UNIX)
 hunter_add_package(GTest)
 find_package(GTest CONFIG REQUIRED)
 
-add_executable(SeaButtle 
-	${CMAKE_CURRENT_SOURCE_DIR}/include
+add_library(seabuttle 
+	${CMAKE_CURRENT_SOURCE_DIR}/include/*
 	)
 
 add_executable(tests
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
         )
 
-target_include_directories(SeaButtle
+target_include_directories(seabuttle
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
         )
-
-add_subdirectory(include buttle)
 
 target_include_directories(tests
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
