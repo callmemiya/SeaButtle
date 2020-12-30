@@ -46,7 +46,7 @@ target_include_directories(seabuttle
 target_include_directories(tests
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
         )
-target_link_libraries(tests GTest::main butеlelib)
+target_link_libraries(tests GTest::main buttlelib)
 
 enable_testing()
 add_test(NAME unit_tests COMMAND tests)
