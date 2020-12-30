@@ -37,7 +37,6 @@ add_executable(tests
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
         )
 
-add_subdirectory(include)
 
 target_include_directories(seabuttle
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
