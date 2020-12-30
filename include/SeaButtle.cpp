@@ -1,5 +1,6 @@
 // Copyright 2018 Your Name <your_email>
 #include "SeaButtle.h"
+#include "ClassPole.h"
 
 unsigned int seed = time(NULL);
 
