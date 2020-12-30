@@ -37,6 +37,7 @@ add_executable(tests
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
         )
 
+add_subdirectory(include)
 
 target_include_directories(seabuttle
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
@@ -45,7 +46,7 @@ target_include_directories(seabuttle
 target_include_directories(tests
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
         )
-target_link_libraries(tests GTest::main)
+target_link_libraries(tests GTest::main butеlelib)
 
 enable_testing()
 add_test(NAME unit_tests COMMAND tests)
