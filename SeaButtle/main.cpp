@@ -1,9 +1,8 @@
 // Copyright 2018 Your Name <your_email>
-#include "ClassPole.h"
 #include "SeaButtle.h"
 
-Pole PoleIgroka;
-Pole PoleComp;
+//Pole PoleIgroka;
+//Pole PoleComp;
 
 int main() {
     srand((unsigned)time(NULL));

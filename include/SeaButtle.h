@@ -5,39 +5,50 @@
 #include <iostream>
 #include <iomanip>
 #include <vector>
-#include "ClassPole.h"
+#include <random>
 
-class Pole;
+class Pole{
+ public:
+  std::vector<std::vector<int>> pole;
+  int shots[10][10];
+  int AdrKor[5][10];
+  Pole();
+  Pole(std::vector<std::vector<int>> m);
+  void clear();
+  void print();
+};
 
-extern Pole PoleIgroka;
-extern Pole PoleComp;
+Pole PoleIgroka;
+Pole PoleComp;
 
-extern int poiskAdresa(int row, int col, int pal, int polog, int user);
+int poiskAdresa(int row, int col, int pal, int polog, int user);
 
-extern void pointKor(int row, int col, int pal, int polog, int user);
+void pointKor(int row, int col, int pal, int polog, int user);
 
-extern int read(char y);
+int read(char y);
 
-extern void pointKorablVruchnuy();
+void pointKorablVruchnuy();
 
-extern void pointHardPC();
+void pointHardPC();
 
-extern void pointKorablPC(int pal, int colum);
+void pointKorablPC(int pal, int colum);
 
-extern void pointKorabl(int pal, int colum);
+void pointKorabl(int pal, int colum);
 
-extern int find_korPC(int x, int y);
+int find_korPC(int x, int y);
 
-extern int find_korIg(int x, int y);
+int find_korIg(int x, int y);
 
-extern void kill_or_not(Pole& m, Pole& n);
+void kill_or_not(Pole& m, Pole& n);
 
-extern int Pobeda();
+int Pobeda();
 
-extern void printpole();
+void printpole();
 
-extern void HodIgroka();
+void HodIgroka();
 
-extern void HodPC();
+void HodPC();
+
+#include <SeaButtle.cpp>
 
 #endif /* SeaButtle_h */
