@@ -6,7 +6,7 @@
 TEST(SeaButtle, Poisk){
   int i = poiskAdresa(0, 0, 4, 1, 1);
   EXPECT_EQ(i, 1);
-  pointKor(0, 0,4, 1, 1);
+  pointKor(0, 0, 4, 1, 1);
   int k = poiskAdresa(0, 0, 4, 1, 1);
   EXPECT_EQ(k, 0);
 }
