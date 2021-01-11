@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/callmemiya/SeaButtle.svg?branch=master)](https://travis-ci.com/callmemiya/SeaButtle)
+[![Build Status](https://travis-ci.com/callmemiya/SeaButtle.svg?branch=callmemiya)](https://travis-ci.com/callmemiya/SeaButtle)
 # КУРСОВОЙ ПРОЕКТ
 
 # Искусственный интеллект для консольной игры «Морской бой»
